@@ -11,6 +11,11 @@ abstract readonly class AbstractReference
         //
     }
 
+    public function withToken(string $token): void
+    {
+        $this->client->withToken($token);
+    }
+
     protected function concat(array $items): string
     {
         return \implode(',', $items);

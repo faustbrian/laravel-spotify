@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static Shows      shows()
  * @method static Tracks     tracks()
  * @method static Users      users()
+ * @method static void       withToken(string $token)
  */
 final class Spotify extends Facade
 {
