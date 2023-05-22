@@ -4,49 +4,51 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
+use Illuminate\Http\Client\Response;
+
 final readonly class Shows extends AbstractReference
 {
-    public function findById(string $id, array $context = []): array
+    public function findById(string $id, array $context = []): Response
     {
-        return $this->client->get("shows/{$id}", $context)->json();
+        return $this->client->get("shows/{$id}", $context);
     }
 
-    public function findByIds(array $ids, array $context = []): array
+    public function findByIds(array $ids, array $context = []): Response
     {
         return $this->client->get('shows', [
             ...$context,
             'ids' => \implode(',', $ids),
-        ])->json();
+        ]);
     }
 
-    public function episodes(array $context = []): array
+    public function episodes(array $context = []): Response
     {
-        return $this->client->get('shows', $context)->json();
+        return $this->client->get('shows', $context);
     }
 
-    public function savedByCurrentUser(array $context = []): array
+    public function savedByCurrentUser(array $context = []): Response
     {
-        return $this->client->get('me/shows', $context)->json();
+        return $this->client->get('me/shows', $context);
     }
 
-    public function saveToCurrentUser(array $ids): array
+    public function saveToCurrentUser(array $ids): Response
     {
         return $this->client->put('me/shows', [
             'ids' => \implode(',', $ids),
-        ])->json();
+        ]);
     }
 
-    public function deleteFromCurrentUser(array $ids): array
+    public function deleteFromCurrentUser(array $ids): Response
     {
         return $this->client->delete('me/shows', [
             'ids' => \implode(',', $ids),
-        ])->json();
+        ]);
     }
 
-    public function checkSavedByCurrentUser(array $ids): array
+    public function checkSavedByCurrentUser(array $ids): Response
     {
         return $this->client->get('me/shows/contains', [
             'ids' => \implode(',', $ids),
-        ])->json();
+        ]);
     }
 }

@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
+use Illuminate\Http\Client\Response;
+
 final readonly class Markets extends AbstractReference
 {
-    public function all(array $context = []): array
+    public function all(array $context = []): Response
     {
-        return $this->client->get('markets', $context)->json();
+        return $this->client->get('markets', $context);
     }
 }
