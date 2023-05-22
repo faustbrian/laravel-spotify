@@ -1,0 +1,496 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Albums.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:deleteFromCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Albums.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Albums.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:findByIds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Albums.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:newReleases\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Albums.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:saveToCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Albums.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:savedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Albums.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:tracks\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Albums.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:albums\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Artists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Artists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:findByIds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Artists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:relatedArtists\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Artists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:topTracks\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Artists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Audibooks\\:\\:chapters\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Audibooks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Audibooks\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Audibooks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Audibooks\\:\\:deleteFromCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Audibooks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Audibooks\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Audibooks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Audibooks\\:\\:findByIds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Audibooks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Audibooks\\:\\:saveToCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Audibooks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Audibooks\\:\\:savedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Audibooks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Categories\\:\\:all\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Categories.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Categories\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Categories.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Chapters\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Chapters.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Chapters\\:\\:findByIds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Chapters.php
+
+		-
+			message: "#^Property BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\:\\:\\$config is never read, only written\\.$#"
+			count: 1
+			path: src/Reference/Client.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Episodes.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:deleteFromCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Episodes.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Episodes.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:findByIds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Episodes.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:saveToCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Episodes.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:savedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Episodes.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Genres\\:\\:seeds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Genres.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Markets\\:\\:all\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Markets.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:currentlyPlaying\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:devices\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:pause\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:play\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:queue\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:queueTrack\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:recentlyPlayed\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:repeatMode\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:seek\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:shuffle\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:skipToNext\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:skipToPrevious\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:state\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:transfer\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:volume\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:addTracks\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:allByTag\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:allForCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:allForUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:allTracks\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:coverImage\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:create\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:featured\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:removeTracks\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:updateCoverImage\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:updateDetails\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:updateTracks\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Search\\:\\:album\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Search.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Search\\:\\:artist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Search.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Search\\:\\:audiobook\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Search.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Search\\:\\:episode\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Search.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Search\\:\\:playlist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Search.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Search\\:\\:show\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Search.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Search\\:\\:track\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Search.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:deleteFromCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:episodes\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:findByIds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:saveToCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:savedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:audioFeature\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:audioFeatures\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:deleteFromCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:findById\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:findByIds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:recommendations\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:saveToCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:savedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsArtist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsPlaylist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:currentUserProfile\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:followArtist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:followPlaylist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:followUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:followedArtists\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:profile\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:topItems\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:unfollowArtist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:unfollowPlaylist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:unfollowUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Cannot access offset 'config' on Illuminate\\\\Contracts\\\\Container\\\\Container\\.$#"
+			count: 1
+			path: src/ServiceProvider.php
+
+		-
+			message: "#^Property BombenProdukt\\\\Spotify\\\\Spotify\\:\\:\\$config is never read, only written\\.$#"
+			count: 1
+			path: src/Spotify.php

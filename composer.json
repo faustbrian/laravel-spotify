@@ -1,0 +1,78 @@
+{
+    "name": "bombenprodukt/laravel-spotify",
+    "description": "A package to easily make use of the Spotify Web API with Laravel.",
+    "license": "MIT",
+    "keywords": [
+        "BombenProdukt",
+        "laravel",
+        "spotify"
+    ],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "brian@bombenprodukt.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/bombenprodukt/laravel-spotify",
+    "require": {
+        "php": "^8.2",
+        "bombenprodukt/laravel-manager": "^1.0",
+        "bombenprodukt/laravel-package-powerpack": "^1.0",
+        "illuminate/contracts": "^10.0"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.2",
+        "friendsofphp/php-cs-fixer": "dev-master",
+        "infection/infection": "^0.27.0",
+        "nunomaduro/collision": "^7.0",
+        "nunomaduro/larastan": "^2.0",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "pestphp/pest-plugin-watch": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "bombenprodukt/php-cs-fixer-config": "^1.0",
+        "spatie/laravel-ray": "^1.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "BombenProdukt\\Spotify\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true,
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Spotify": "BombenProdukt\\Spotify\\Facades\\Spotify"
+            },
+            "providers": [
+                "BombenProdukt\\Spotify\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    }
+}
