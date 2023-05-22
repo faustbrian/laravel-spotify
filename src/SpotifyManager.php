@@ -15,6 +15,6 @@ final class SpotifyManager extends AbstractManager
 
     protected function getConfigName(): string
     {
-        return 'Spotify';
+        return 'spotify';
     }
 }
