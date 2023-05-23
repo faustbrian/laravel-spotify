@@ -22,8 +22,9 @@
         "illuminate/contracts": "^10.0"
     },
     "require-dev": {
+        "bombenprodukt/php-cs-fixer-config": "^1.0",
         "ergebnis/composer-normalize": "^2.2",
-        "friendsofphp/php-cs-fixer": "dev-master",
+        "friendsofphp/php-cs-fixer": "^3.17",
         "infection/infection": "^0.27.0",
         "nunomaduro/collision": "^7.0",
         "nunomaduro/larastan": "^2.0",
@@ -34,7 +35,6 @@
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
-        "bombenprodukt/php-cs-fixer-config": "^1.0",
         "spatie/laravel-ray": "^1.2"
     },
     "minimum-stability": "dev",
