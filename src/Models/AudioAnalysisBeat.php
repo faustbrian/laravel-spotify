@@ -9,8 +9,8 @@ use Spatie\LaravelData\Data;
 final class AudioAnalysisBeat extends Data
 {
     public function __construct(
-        public float $start,
-        public float $duration,
-        public float $confidence,
+        public readonly float $start,
+        public readonly float $duration,
+        public readonly float $confidence,
     ) {}
 }

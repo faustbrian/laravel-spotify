@@ -13,9 +13,9 @@ final class PlaylistTracksResponse extends Data
     public function __construct(
         public readonly string $href,
         public readonly int $limit,
-        public readonly string $next,
+        public readonly ?string $next,
         public readonly int $offset,
-        public readonly string $previous,
+        public readonly ?string $previous,
         public readonly int $total,
         #[DataCollectionOf(PlaylistTrack::class)]
         public readonly DataCollection $items,

@@ -10,7 +10,7 @@ final class Playlist extends Data
 {
     public function __construct(
         public readonly bool $collaborative,
-        public readonly string $description,
+        public readonly ?string $description,
         public readonly ExternalUrls $external_urls,
         public readonly ?Follower $followers,
         public readonly string $href,

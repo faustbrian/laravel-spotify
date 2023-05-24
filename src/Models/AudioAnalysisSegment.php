@@ -9,14 +9,14 @@ use Spatie\LaravelData\Data;
 final class AudioAnalysisSegment extends Data
 {
     public function __construct(
-        public float $start,
-        public float $duration,
-        public float $confidence,
-        public float $loudness_start,
-        public float $loudness_max,
-        public float $loudness_max_time,
-        public float $loudness_end,
-        public array $pitches,
-        public array $timbre,
+        public readonly float $start,
+        public readonly float $duration,
+        public readonly float $confidence,
+        public readonly float $loudness_start,
+        public readonly float $loudness_max,
+        public readonly float $loudness_max_time,
+        public readonly float $loudness_end,
+        public readonly array $pitches,
+        public readonly array $timbre,
     ) {}
 }

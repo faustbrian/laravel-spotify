@@ -9,7 +9,7 @@ use Spatie\LaravelData\Data;
 final class Follower extends Data
 {
     public function __construct(
-        public readonly string $href,
+        public readonly ?string $href,
         public readonly int $total,
     ) {}
 }

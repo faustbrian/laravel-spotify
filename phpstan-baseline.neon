@@ -356,6 +356,16 @@ parameters:
 			path: src/Reference/Chapters.php
 
 		-
+			message: "#^Cannot cast mixed to int\\.$#"
+			count: 1
+			path: src/Reference/Client.php
+
+		-
+			message: "#^Cannot cast mixed to string\\.$#"
+			count: 1
+			path: src/Reference/Client.php
+
+		-
 			message: "#^Property BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\:\\:\\$config is never read, only written\\.$#"
 			count: 1
 			path: src/Reference/Client.php

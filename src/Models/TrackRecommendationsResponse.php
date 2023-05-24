@@ -12,8 +12,8 @@ final class TrackRecommendationsResponse extends Data
 {
     public function __construct(
         #[DataCollectionOf(TrackRecommendationSeed::class)]
-        public DataCollection $seeds,
+        public readonly DataCollection $seeds,
         #[DataCollectionOf(Track::class)]
-        public DataCollection $tracks,
+        public readonly DataCollection $tracks,
     ) {}
 }

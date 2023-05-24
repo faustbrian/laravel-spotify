@@ -11,17 +11,17 @@ use Spatie\LaravelData\DataCollection;
 final class AudioAnalysis extends Data
 {
     public function __construct(
-        public AudioAnalysisMeta $meta,
-        public AudioAnalysisTrack $track,
+        public readonly AudioAnalysisMeta $meta,
+        public readonly AudioAnalysisTrack $track,
         #[DataCollectionOf(AudioAnalysisBar::class)]
-        public DataCollection $bars,
+        public readonly DataCollection $bars,
         #[DataCollectionOf(AudioAnalysisBeat::class)]
-        public DataCollection $beats,
+        public readonly DataCollection $beats,
         #[DataCollectionOf(AudioAnalysisSection::class)]
-        public DataCollection $sections,
+        public readonly DataCollection $sections,
         #[DataCollectionOf(AudioAnalysisSegment::class)]
-        public DataCollection $segments,
+        public readonly DataCollection $segments,
         #[DataCollectionOf(AudioAnalysisTatum::class)]
-        public DataCollection $tatums,
+        public readonly DataCollection $tatums,
     ) {}
 }

@@ -9,17 +9,17 @@ use Spatie\LaravelData\Data;
 final class AudioAnalysisSection extends Data
 {
     public function __construct(
-        public float $start,
-        public float $duration,
-        public float $confidence,
-        public float $loudness,
-        public float $tempo,
-        public float $tempo_confidence,
-        public int $key,
-        public float $key_confidence,
-        public int $mode,
-        public float $mode_confidence,
-        public int $time_signature,
-        public float $time_signature_confidence,
+        public readonly float $start,
+        public readonly float $duration,
+        public readonly float $confidence,
+        public readonly float $loudness,
+        public readonly float $tempo,
+        public readonly float $tempo_confidence,
+        public readonly int $key,
+        public readonly float $key_confidence,
+        public readonly int $mode,
+        public readonly float $mode_confidence,
+        public readonly int $time_signature,
+        public readonly float $time_signature_confidence,
     ) {}
 }

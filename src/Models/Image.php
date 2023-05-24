@@ -10,7 +10,7 @@ final class Image extends Data
 {
     public function __construct(
         public readonly string $url,
-        public readonly int $height,
-        public readonly int $width,
+        public readonly ?int $height,
+        public readonly ?int $width,
     ) {}
 }
