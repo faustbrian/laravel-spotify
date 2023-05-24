@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use Illuminate\Http\Client\Response;
-
 final readonly class Genres extends AbstractReference
 {
-    public function seeds(array $context = []): Response
+    public function seeds(array $context = []): array
     {
-        return $this->get('recommendations/available-genre-seeds', $context);
+        return $this->get('recommendations/available-genre-seeds', $context)->json('genres');
     }
 }

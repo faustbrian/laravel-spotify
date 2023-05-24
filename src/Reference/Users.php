@@ -4,101 +4,112 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use Illuminate\Http\Client\Response;
+use BombenProdukt\Spotify\Models\CurrentUser;
+use BombenProdukt\Spotify\Models\CurrentUserTopArtists;
+use BombenProdukt\Spotify\Models\CurrentUserTopTracks;
+use BombenProdukt\Spotify\Models\User;
+use BombenProdukt\Spotify\Models\UserFollowedArtists;
 
 final readonly class Users extends AbstractReference
 {
-    public function currentUserProfile(): Response
+    public function currentUserProfile(): CurrentUser
     {
-        return $this->get('me');
+        return CurrentUser::fromResponse($this->get('me'));
     }
 
-    public function topItems(string $type, array $context = []): Response
+    public function topArtists(array $context = []): CurrentUserTopArtists
     {
-        return $this->get("me/top/{$type}", $context);
+        return CurrentUserTopArtists::fromResponse($this->get('me/top/artists', $context));
     }
 
-    public function profile(string $id): Response
+    public function topTracks(array $context = []): CurrentUserTopTracks
     {
-        return $this->get("users/{$id}");
+        return CurrentUserTopTracks::fromResponse($this->get('me/top/tracks', $context));
     }
 
-    public function followPlaylist(string $id, array $context = []): Response
+    public function profile(string $id): User
     {
-        return $this->put("playlists/{$id}/followers", $context);
+        return User::fromResponse($this->get("users/{$id}"));
     }
 
-    public function unfollowPlaylist(string $id): Response
+    public function followPlaylist(string $id, array $context = []): bool
     {
-        return $this->delete("playlists/{$id}/followers");
+        return $this->put("playlists/{$id}/followers", $context)->status() === 200;
     }
 
-    public function followedArtists(string $type, array $context = []): Response
+    public function unfollowPlaylist(string $id): bool
     {
-        return $this->get('me/following', [
-            ...$context,
-            'type' => $type,
-        ]);
+        return $this->delete("playlists/{$id}/followers")->status() === 200;
     }
 
-    public function followArtist(array $ids, array $context = []): Response
+    public function followedArtists(array $context = []): UserFollowedArtists
+    {
+        return UserFollowedArtists::from(
+            $this->get('me/following', [
+                ...$context,
+                'type' => 'artist',
+            ])->json('artists'),
+        );
+    }
+
+    public function followArtist(array $ids, array $context = []): bool
     {
         return $this->put('me/following', [
             ...$context,
             'type' => 'artist',
             'ids' => $this->concat($ids),
-        ]);
+        ])->status() === 200;
     }
 
-    public function unfollowArtist(array $ids, array $context = []): Response
+    public function unfollowArtist(array $ids, array $context = []): bool
     {
         return $this->delete('me/following', [
             ...$context,
             'type' => 'artist',
             'ids' => $this->concat($ids),
-        ]);
+        ])->status() === 200;
     }
 
-    public function followUser(array $ids, array $context = []): Response
+    public function followUser(array $ids, array $context = []): bool
     {
         return $this->put('me/following', [
             ...$context,
             'type' => 'user',
             'ids' => $this->concat($ids),
-        ]);
+        ])->status() === 200;
     }
 
-    public function unfollowUser(array $ids, array $context = []): Response
+    public function unfollowUser(array $ids, array $context = []): bool
     {
         return $this->delete('me/following', [
             ...$context,
             'type' => 'user',
             'ids' => $this->concat($ids),
-        ]);
+        ])->status() === 200;
     }
 
-    public function checkFollowsArtist(array $context = []): Response
+    public function checkFollowsArtist(array $context = []): array
     {
         return $this->get('me/following/contains', [
             ...$context,
             'type' => 'artist',
-        ]);
+        ])->json();
     }
 
-    public function checkFollowsUser(array $context = []): Response
+    public function checkFollowsUser(array $context = []): array
     {
         return $this->get('me/following/contains', [
             ...$context,
             'type' => 'user',
-        ]);
+        ])->json();
     }
 
-    public function checkFollowsPlaylist(string $playlistId, array $userIds, array $context = []): Response
+    public function checkFollowsPlaylist(string $playlistId, array $userIds, array $context = []): array
     {
         return $this->get("playlists/{$playlistId}/followers/contains", [
             ...$context,
             'type' => 'user',
             'ids' => \implode(',', $userIds),
-        ]);
+        ])->json();
     }
 }
