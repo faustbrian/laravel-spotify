@@ -22,38 +22,39 @@ use BombenProdukt\Spotify\Models\TrackSearchResponse;
 use BombenProdukt\Spotify\Reference\Search;
 use Spatie\LaravelData\DataCollection;
 
-// test('search', function (): void {
-//     $actual = fakeSequence(Search::class, 'search/search')->search('', '');
+test('search', function (): void {
+    $actual = fakeSequence(Search::class, 'search/search')->search([''], '');
 
-//     expect($actual)->toBeInstanceOf(SearchResponse::class);
-//     expect($actual->albums)->toBeInstanceOf(AlbumSearchResponse::class);
-//     expect($actual->albums->items)->toBeInstanceOf(DataCollection::class);
-//     expect($actual->albums->items->first())->toBeInstanceOf(Album::class);
+    expect($actual)->toBeInstanceOf(SearchResponse::class);
 
-//     expect($actual->artists)->toBeInstanceOf(ArtistSearchResponse::class);
-//     expect($actual->artists->items)->toBeInstanceOf(DataCollection::class);
-//     expect($actual->artists->items->first())->toBeInstanceOf(Artist::class);
+    expect($actual->albums)->toBeInstanceOf(AlbumSearchResponse::class);
+    expect($actual->albums->items)->toBeInstanceOf(DataCollection::class);
+    expect($actual->albums->items->first())->toBeInstanceOf(Album::class);
 
-//     expect($actual->audiobooks)->toBeInstanceOf(AudiobookSearchResponse::class);
-//     expect($actual->audiobooks->items)->toBeInstanceOf(DataCollection::class);
-//     expect($actual->audiobooks->items->first())->toBeInstanceOf(Audiobook::class);
+    expect($actual->artists)->toBeInstanceOf(ArtistSearchResponse::class);
+    expect($actual->artists->items)->toBeInstanceOf(DataCollection::class);
+    expect($actual->artists->items->first())->toBeInstanceOf(Artist::class);
 
-//     expect($actual->episodes)->toBeInstanceOf(EpisodeSearchResponse::class);
-//     expect($actual->episodes->items)->toBeInstanceOf(DataCollection::class);
-//     expect($actual->episodes->items->first())->toBeInstanceOf(Episode::class);
+    expect($actual->audiobooks)->toBeInstanceOf(AudiobookSearchResponse::class);
+    expect($actual->audiobooks->items)->toBeInstanceOf(DataCollection::class);
+    expect($actual->audiobooks->items->first())->toBeInstanceOf(Audiobook::class);
 
-//     expect($actual->playlists)->toBeInstanceOf(PlaylistSearchResponse::class);
-//     expect($actual->playlists->items)->toBeInstanceOf(DataCollection::class);
-//     expect($actual->playlists->items->first())->toBeInstanceOf(Playlist::class);
+    expect($actual->episodes)->toBeInstanceOf(EpisodeSearchResponse::class);
+    expect($actual->episodes->items)->toBeInstanceOf(DataCollection::class);
+    expect($actual->episodes->items->first())->toBeInstanceOf(Episode::class);
 
-//     expect($actual->shows)->toBeInstanceOf(ShowSearchResponse::class);
-//     expect($actual->shows->items)->toBeInstanceOf(DataCollection::class);
-//     expect($actual->shows->items->first())->toBeInstanceOf(Show::class);
+    expect($actual->playlists)->toBeInstanceOf(PlaylistSearchResponse::class);
+    expect($actual->playlists->items)->toBeInstanceOf(DataCollection::class);
+    expect($actual->playlists->items->first())->toBeInstanceOf(Playlist::class);
 
-//     expect($actual->tracks)->toBeInstanceOf(TrackSearchResponse::class);
-//     expect($actual->tracks->items)->toBeInstanceOf(DataCollection::class);
-//     expect($actual->tracks->items->first())->toBeInstanceOf(Track::class);
-// });
+    expect($actual->shows)->toBeInstanceOf(ShowSearchResponse::class);
+    expect($actual->shows->items)->toBeInstanceOf(DataCollection::class);
+    expect($actual->shows->items->first())->toBeInstanceOf(Show::class);
+
+    expect($actual->tracks)->toBeInstanceOf(TrackSearchResponse::class);
+    expect($actual->tracks->items)->toBeInstanceOf(DataCollection::class);
+    expect($actual->tracks->items->first())->toBeInstanceOf(Track::class);
+});
 
 test('album', function (): void {
     $actual = fakeSequence(Search::class, 'search/album')->album('');

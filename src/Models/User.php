@@ -10,7 +10,7 @@ use Spatie\LaravelData\DataCollection;
 final class User extends AbstractModel
 {
     public function __construct(
-        public readonly string $display_name,
+        public readonly ?string $display_name,
         public readonly ExternalUrls $external_urls,
         public readonly Follower $followers,
         public readonly string $href,
