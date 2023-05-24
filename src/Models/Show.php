@@ -29,6 +29,6 @@ final class Show extends AbstractModel
         public readonly string $type,
         public readonly string $uri,
         public readonly int $total_episodes,
-        public readonly Episodes $episodes,
+        public readonly ?Episodes $episodes,
     ) {}
 }
