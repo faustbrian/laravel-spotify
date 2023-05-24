@@ -216,6 +216,21 @@ parameters:
 			path: src/Reference/Audiobooks.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Chapters\\:\\:findByIds\\(\\) return type with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Reference/Chapters.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Chapters\\:\\:findByIds\\(\\) should return iterable\\<BombenProdukt\\\\Spotify\\\\Models\\\\Chapter\\>&Spatie\\\\LaravelData\\\\DataCollection but returns Spatie\\\\LaravelData\\\\CursorPaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Chapter\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Chapter\\>\\|Spatie\\\\LaravelData\\\\PaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Chapter\\>\\.$#"
+			count: 1
+			path: src/Reference/Chapters.php
+
+		-
+			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
+			count: 1
+			path: src/Reference/Chapters.php
+
+		-
 			message: "#^Property BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\:\\:\\$client \\(Illuminate\\\\Http\\\\Client\\\\PendingRequest\\) does not accept BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\.$#"
 			count: 1
 			path: src/Reference/Client.php
