@@ -12,9 +12,15 @@ use Spatie\LaravelData\DataCollection;
 
 final readonly class Player extends AbstractReference
 {
-    public function state(array $context = []): PlayerState
+    public function state(array $context = []): ?PlayerState
     {
-        return PlayerState::from($this->get('me/player', $context)->json());
+        $response = $this->get('me/player', $context)->json();
+
+        if (empty($response)) {
+            return null;
+        }
+
+        return PlayerState::from($response);
     }
 
     public function transfer(array $context = []): bool
@@ -32,9 +38,15 @@ final readonly class Player extends AbstractReference
         return Device::collection($this->get('me/player/devices')->json('devices'));
     }
 
-    public function currentlyPlaying(array $context = []): PlayerState
+    public function currentlyPlaying(array $context = []): ?PlayerState
     {
-        return PlayerState::from($this->get('me/player/currently-playing', $context)->json());
+        $response = $this->get('me/player/currently-playing', $context)->json();
+
+        if (empty($response)) {
+            return null;
+        }
+
+        return PlayerState::from($response);
     }
 
     public function play(string $deviceId, array $context = []): bool
