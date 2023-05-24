@@ -7,6 +7,7 @@ namespace BombenProdukt\Spotify\Reference;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
+use RuntimeException;
 
 final class Client
 {
@@ -54,9 +55,21 @@ final class Client
 
     private function request(string $method, string $path, array $body, array $query): Response
     {
-        return $this->client->{$method}(
+        /**
+         * @var Response
+         */
+        $response = $this->client->{$method}(
             \sprintf('%s?%s', $path, \http_build_query($query)),
             $body
-        )->throw();
+        );
+
+        if (\is_array($response->json('error'))) {
+            throw new RuntimeException(
+                message: (string) $response->json('error.message'),
+                code: (int) $response->json('error.status'),
+            );
+        }
+
+        return $response->throw();
     }
 }
