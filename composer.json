@@ -19,6 +19,7 @@
         "php": "^8.2",
         "bombenprodukt/laravel-manager": "^1.0",
         "bombenprodukt/laravel-package-powerpack": "^1.0",
+        "guzzlehttp/guzzle": "^7.7",
         "illuminate/contracts": "^10.0",
         "spatie/laravel-data": "^3.5"
     },

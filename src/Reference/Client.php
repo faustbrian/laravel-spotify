@@ -22,7 +22,7 @@ final class Client
 
     public function withToken(string $token): self
     {
-        $this->client = $this->client->withToken($token);
+        $this->client = $this->withToken($token);
 
         return $this;
     }

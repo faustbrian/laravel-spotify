@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-use Spatie\LaravelData\Data;
-
-final class Context extends Data
+final class Context extends AbstractModel
 {
     public function __construct(
-        public string $type,
-        public string $href,
-        public ExternalUrls $external_urls,
-        public string $uri,
+        public readonly string $type,
+        public readonly string $href,
+        public readonly ExternalUrls $external_urls,
+        public readonly string $uri,
     ) {}
 }

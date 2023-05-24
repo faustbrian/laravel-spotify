@@ -10,6 +10,6 @@ final readonly class Markets extends AbstractReference
 {
     public function all(array $context = []): Response
     {
-        return $this->client->get('markets', $context);
+        return $this->get('markets', $context);
     }
 }

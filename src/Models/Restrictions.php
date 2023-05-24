@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-use Spatie\LaravelData\Data;
-
-final class Restrictions extends Data
+final class Restrictions extends AbstractModel
 {
     public function __construct(
-        public string $reason,
+        public readonly string $reason,
     ) {}
 }

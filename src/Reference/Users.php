@@ -10,32 +10,32 @@ final readonly class Users extends AbstractReference
 {
     public function currentUserProfile(): Response
     {
-        return $this->client->get('me');
+        return $this->get('me');
     }
 
     public function topItems(string $type, array $context = []): Response
     {
-        return $this->client->get("me/top/{$type}", $context);
+        return $this->get("me/top/{$type}", $context);
     }
 
     public function profile(string $id): Response
     {
-        return $this->client->get("users/{$id}");
+        return $this->get("users/{$id}");
     }
 
     public function followPlaylist(string $id, array $context = []): Response
     {
-        return $this->client->put("playlists/{$id}/followers", $context);
+        return $this->put("playlists/{$id}/followers", $context);
     }
 
     public function unfollowPlaylist(string $id): Response
     {
-        return $this->client->delete("playlists/{$id}/followers");
+        return $this->delete("playlists/{$id}/followers");
     }
 
     public function followedArtists(string $type, array $context = []): Response
     {
-        return $this->client->get('me/following', [
+        return $this->get('me/following', [
             ...$context,
             'type' => $type,
         ]);
@@ -43,43 +43,43 @@ final readonly class Users extends AbstractReference
 
     public function followArtist(array $ids, array $context = []): Response
     {
-        return $this->client->put('me/following', [
+        return $this->put('me/following', [
             ...$context,
             'type' => 'artist',
-            'ids' => \implode(',', $ids),
+            'ids' => $this->concat($ids),
         ]);
     }
 
     public function unfollowArtist(array $ids, array $context = []): Response
     {
-        return $this->client->delete('me/following', [
+        return $this->delete('me/following', [
             ...$context,
             'type' => 'artist',
-            'ids' => \implode(',', $ids),
+            'ids' => $this->concat($ids),
         ]);
     }
 
     public function followUser(array $ids, array $context = []): Response
     {
-        return $this->client->put('me/following', [
+        return $this->put('me/following', [
             ...$context,
             'type' => 'user',
-            'ids' => \implode(',', $ids),
+            'ids' => $this->concat($ids),
         ]);
     }
 
     public function unfollowUser(array $ids, array $context = []): Response
     {
-        return $this->client->delete('me/following', [
+        return $this->delete('me/following', [
             ...$context,
             'type' => 'user',
-            'ids' => \implode(',', $ids),
+            'ids' => $this->concat($ids),
         ]);
     }
 
     public function checkFollowsArtist(array $context = []): Response
     {
-        return $this->client->get('me/following/contains', [
+        return $this->get('me/following/contains', [
             ...$context,
             'type' => 'artist',
         ]);
@@ -87,7 +87,7 @@ final readonly class Users extends AbstractReference
 
     public function checkFollowsUser(array $context = []): Response
     {
-        return $this->client->get('me/following/contains', [
+        return $this->get('me/following/contains', [
             ...$context,
             'type' => 'user',
         ]);
@@ -95,7 +95,7 @@ final readonly class Users extends AbstractReference
 
     public function checkFollowsPlaylist(string $playlistId, array $userIds, array $context = []): Response
     {
-        return $this->client->get("playlists/{$playlistId}/followers/contains", [
+        return $this->get("playlists/{$playlistId}/followers/contains", [
             ...$context,
             'type' => 'user',
             'ids' => \implode(',', $userIds),

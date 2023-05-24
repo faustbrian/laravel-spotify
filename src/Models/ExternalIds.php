@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-use Spatie\LaravelData\Data;
-
-final class ExternalIds extends Data
+final class ExternalIds extends AbstractModel
 {
     public function __construct(
-        public string $isrc,
-        public string $ean,
-        public string $upc,
+        public readonly string $isrc,
+        public readonly string $ean,
+        public readonly string $upc,
     ) {}
 }

@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
-use Spatie\LaravelData\Data;
+use Spatie\LaravelData\DataCollection;
 
-final class User extends Data
+final class User extends AbstractModel
 {
     public function __construct(
-        public string $display_name,
-        public ExternalUrls $external_urls,
-        public Follower $followers,
-        public string $href,
-        public string $id,
+        public readonly string $display_name,
+        public readonly ExternalUrls $external_urls,
+        public readonly Follower $followers,
+        public readonly string $href,
+        public readonly string $id,
         #[DataCollectionOf(Image::class)]
-        public array $images,
-        public string $type,
-        public string $uri,
+        public readonly DataCollection $images,
+        public readonly string $type,
+        public readonly string $uri,
     ) {}
 }

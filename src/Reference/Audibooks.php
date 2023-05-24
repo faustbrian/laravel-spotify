@@ -10,45 +10,45 @@ final readonly class Audibooks extends AbstractReference
 {
     public function findById(string $id, array $context = []): Response
     {
-        return $this->client->get("audibooks/{$id}", $context);
+        return $this->get("audibooks/{$id}", $context);
     }
 
     public function findByIds(array $ids, array $context = []): Response
     {
-        return $this->client->get('audibooks', [
+        return $this->get('audibooks', [
             ...$context,
-            'ids' => \implode(',', $ids),
+            'ids' => $this->concat($ids),
         ]);
     }
 
     public function chapters(string $id, array $context = []): Response
     {
-        return $this->client->get("audibooks/{$id}/chapters", $context);
+        return $this->get("audibooks/{$id}/chapters", $context);
     }
 
     public function savedByCurrentUser(array $context = []): Response
     {
-        return $this->client->get('me/audibooks', $context);
+        return $this->get('me/audibooks', $context);
     }
 
-    public function saveToCurrentUser(array $ids): Response
+    public function saveToCurrentUser(array $ids): bool
     {
-        return $this->client->put('me/audibooks', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->put('me/audibooks', [
+            'ids' => $this->concat($ids),
+        ])->status() === 200;
     }
 
-    public function deleteFromCurrentUser(array $ids): Response
+    public function deleteFromCurrentUser(array $ids): bool
     {
-        return $this->client->delete('me/audibooks', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->delete('me/audibooks', [
+            'ids' => $this->concat($ids),
+        ])->status() === 200;
     }
 
     public function checkSavedByCurrentUser(array $ids): Response
     {
-        return $this->client->get('me/audibooks/contains', [
-            'ids' => \implode(',', $ids),
+        return $this->get('me/audibooks/contains', [
+            'ids' => $this->concat($ids),
         ]);
     }
 }

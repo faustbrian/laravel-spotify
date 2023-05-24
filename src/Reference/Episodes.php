@@ -10,40 +10,40 @@ final readonly class Episodes extends AbstractReference
 {
     public function findById(string $id, array $context = []): Response
     {
-        return $this->client->get("episodes/{$id}", $context);
+        return $this->get("episodes/{$id}", $context);
     }
 
     public function findByIds(array $ids, array $context = []): Response
     {
-        return $this->client->get('episodes', [
+        return $this->get('episodes', [
             ...$context,
-            'ids' => \implode(',', $ids),
+            'ids' => $this->concat($ids),
         ]);
     }
 
     public function savedByCurrentUser(array $context = []): Response
     {
-        return $this->client->get('me/episodes', $context);
+        return $this->get('me/episodes', $context);
     }
 
-    public function saveToCurrentUser(array $ids): Response
+    public function saveToCurrentUser(array $ids): bool
     {
-        return $this->client->put('me/episodes', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->put('me/episodes', [
+            'ids' => $this->concat($ids),
+        ])->status() === 200;
     }
 
-    public function deleteFromCurrentUser(array $ids): Response
+    public function deleteFromCurrentUser(array $ids): bool
     {
-        return $this->client->delete('me/episodes', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->delete('me/episodes', [
+            'ids' => $this->concat($ids),
+        ])->status() === 200;
     }
 
     public function checkSavedByCurrentUser(array $ids): Response
     {
-        return $this->client->get('me/episodes/contains', [
-            'ids' => \implode(',', $ids),
+        return $this->get('me/episodes/contains', [
+            'ids' => $this->concat($ids),
         ]);
     }
 }

@@ -10,11 +10,11 @@ final readonly class Categories extends AbstractReference
 {
     public function all(array $context = []): Response
     {
-        return $this->client->get('browse/categories', $context);
+        return $this->get('browse/categories', $context);
     }
 
     public function findById(string $id, array $context = []): Response
     {
-        return $this->client->get("/browse/categories/{$id}", $context);
+        return $this->get("/browse/categories/{$id}", $context);
     }
 }

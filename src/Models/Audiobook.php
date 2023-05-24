@@ -5,34 +5,34 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
-use Spatie\LaravelData\Data;
+use Spatie\LaravelData\DataCollection;
 
-final class Audiobook extends Data
+final class Audiobook extends AbstractModel
 {
     public function __construct(
         #[DataCollectionOf(Author::class)]
-        public array $authors,
-        public array $available_markets,
+        public readonly DataCollection $authors,
+        public readonly array $available_markets,
         #[DataCollectionOf(Copyright::class)]
-        public array $copyrights,
-        public string $description,
-        public string $html_description,
-        public string $edition,
-        public bool $explicit,
-        public ExternalUrls $external_urls,
-        public string $href,
-        public string $id,
+        public readonly DataCollection $copyrights,
+        public readonly string $description,
+        public readonly string $html_description,
+        public readonly string $edition,
+        public readonly bool $explicit,
+        public readonly ExternalUrls $external_urls,
+        public readonly string $href,
+        public readonly string $id,
         #[DataCollectionOf(Image::class)]
-        public array $images,
-        public array $languages,
-        public string $media_type,
-        public string $name,
+        public readonly DataCollection $images,
+        public readonly array $languages,
+        public readonly string $media_type,
+        public readonly string $name,
         #[DataCollectionOf(Narrator::class)]
-        public array $narrators,
-        public string $publisher,
-        public string $type,
-        public string $uri,
-        public int $total_chapters,
-        public Chapters $chapters,
+        public readonly DataCollection $narrators,
+        public readonly string $publisher,
+        public readonly string $type,
+        public readonly string $uri,
+        public readonly int $total_chapters,
+        public readonly Chapters $chapters,
     ) {}
 }

@@ -10,55 +10,55 @@ final readonly class Tracks extends AbstractReference
 {
     public function findById(string $id, array $context = []): Response
     {
-        return $this->client->get("tracks/{$id}", $context);
+        return $this->get("tracks/{$id}", $context);
     }
 
     public function findByIds(array $ids, array $context = []): Response
     {
-        return $this->client->get('tracks', [
+        return $this->get('tracks', [
             ...$context,
-            'ids' => \implode(',', $ids),
+            'ids' => $this->concat($ids),
         ]);
     }
 
     public function savedByCurrentUser(array $context = []): Response
     {
-        return $this->client->get('me/tracks', $context);
+        return $this->get('me/tracks', $context);
     }
 
-    public function saveToCurrentUser(array $ids): Response
+    public function saveToCurrentUser(array $ids): bool
     {
-        return $this->client->put('me/tracks', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->put('me/tracks', [
+            'ids' => $this->concat($ids),
+        ])->status() === 200;
     }
 
-    public function deleteFromCurrentUser(array $ids): Response
+    public function deleteFromCurrentUser(array $ids): bool
     {
-        return $this->client->delete('me/tracks', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->delete('me/tracks', [
+            'ids' => $this->concat($ids),
+        ])->status() === 200;
     }
 
-    public function checkSavedByCurrentUser(array $ids): Response
+    public function checkSavedByCurrentUser(array $ids): array
     {
-        return $this->client->get('me/tracks/contains', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->get('me/tracks/contains', [
+            'ids' => $this->concat($ids),
+        ])->json();
     }
 
     public function audioFeatures(array $context = []): Response
     {
-        return $this->client->get('audio-features', $context);
+        return $this->get('audio-features', $context);
     }
 
     public function audioFeature(string $id, array $context = []): Response
     {
-        return $this->client->get("audio-features/{$id}", $context);
+        return $this->get("audio-features/{$id}", $context);
     }
 
     public function recommendations(array $context = []): Response
     {
-        return $this->client->get('recommendations', $context);
+        return $this->get('recommendations', $context);
     }
 }

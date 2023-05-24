@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
-use Spatie\LaravelData\Data;
+use Spatie\LaravelData\DataCollection;
 
-final class RecentlyPlayedTracks extends Data
+final class RecentlyPlayedTracks extends AbstractModel
 {
     public function __construct(
-        public string $href,
-        public int $limit,
-        public ?string $next,
-        public Cursors $cursors,
-        public int $total,
+        public readonly string $href,
+        public readonly int $limit,
+        public readonly ?string $next,
+        public readonly Cursors $cursors,
+        public readonly int $total,
         #[DataCollectionOf(Track::class)]
-        public array $items,
+        public readonly DataCollection $items,
     ) {}
 }

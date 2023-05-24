@@ -10,94 +10,79 @@ final readonly class Player extends AbstractReference
 {
     public function state(array $context = []): Response
     {
-        return $this->client
-            ->get('me/player', $context);
+        return $this->get('me/player', $context);
     }
 
     public function transfer(array $context = []): Response
     {
-        return $this->client
-            ->put('me/player', $context);
+        return $this->put('me/player', $context);
     }
 
     public function devices(): Response
     {
-        return $this->client
-            ->get('me/player/devices');
+        return $this->get('me/player/devices');
     }
 
     public function currentlyPlaying(array $context = []): Response
     {
-        return $this->client
-            ->get('me/player/currently-playing', $context);
+        return $this->get('me/player/currently-playing', $context);
     }
 
     public function play(string $deviceId, array $context = []): Response
     {
-        return $this->client
-            ->put('me/player/play', \array_merge(['device_id' => $deviceId], $context));
+        return $this->put('me/player/play', \array_merge(['device_id' => $deviceId], $context));
     }
 
     public function pause(string $deviceId): Response
     {
-        return $this->client
-            ->put('me/player/pause', ['device_id' => $deviceId]);
+        return $this->put('me/player/pause', ['device_id' => $deviceId]);
     }
 
     public function skipToPrevious(string $deviceId): Response
     {
-        return $this->client
-            ->post('me/player/previous', ['device_id' => $deviceId]);
+        return $this->post('me/player/previous', ['device_id' => $deviceId]);
     }
 
     public function skipToNext(string $deviceId): Response
     {
-        return $this->client
-            ->post('me/player/next', ['device_id' => $deviceId]);
+        return $this->post('me/player/next', ['device_id' => $deviceId]);
     }
 
     public function seek(string $deviceId, int $positionMs): Response
     {
-        return $this->client
-            ->put('me/player/seek', ['device_id' => $deviceId], ['position_ms' => $positionMs]);
+        return $this->put('me/player/seek', ['device_id' => $deviceId], ['position_ms' => $positionMs]);
     }
 
     public function repeatMode(string $deviceId, string $state): Response
     {
-        return $this->client
-            ->put('me/player/repeat', ['device_id' => $deviceId], ['state' => $state]);
+        return $this->put('me/player/repeat', ['device_id' => $deviceId], ['state' => $state]);
     }
 
     public function volume(string $deviceId, int $volumePercent): Response
     {
-        return $this->client
-            ->put('me/player/volume', ['device_id' => $deviceId], ['volume_percent' => $volumePercent]);
+        return $this->put('me/player/volume', ['device_id' => $deviceId], ['volume_percent' => $volumePercent]);
     }
 
     public function shuffle(string $deviceId, string $state): Response
     {
-        return $this->client
-            ->put('me/player/shuffle', ['device_id' => $deviceId], ['state' => $state]);
+        return $this->put('me/player/shuffle', ['device_id' => $deviceId], ['state' => $state]);
     }
 
     public function recentlyPlayed(array $context = []): Response
     {
-        return $this->client
-            ->post('me/player/recently-played', $context);
+        return $this->post('me/player/recently-played', $context);
     }
 
     public function queue(): Response
     {
-        return $this->client
-            ->get('me/player/queue');
+        return $this->get('me/player/queue');
     }
 
     public function queueTrack(string $deviceId, string $uri): Response
     {
-        return $this->client
-            ->post('me/player/queue', [
-                'device_id' => $deviceId,
-                'uri' => $uri,
-            ]);
+        return $this->post('me/player/queue', [
+            'device_id' => $deviceId,
+            'uri' => $uri,
+        ]);
     }
 }

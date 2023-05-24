@@ -10,14 +10,14 @@ final readonly class Chapters extends AbstractReference
 {
     public function findById(string $id, array $context = []): Response
     {
-        return $this->client->get("chapters/{$id}", $context);
+        return $this->get("chapters/{$id}", $context);
     }
 
     public function findByIds(array $ids, array $context = []): Response
     {
-        return $this->client->get('chapters', [
+        return $this->get('chapters', [
             ...$context,
-            'ids' => \implode(',', $ids),
+            'ids' => $this->concat($ids),
         ]);
     }
 }

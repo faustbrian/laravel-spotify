@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use BombenProdukt\Spotify\Reference\Client;
+use Illuminate\Support\Facades\Http;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -48,7 +51,14 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something(): void
+function fixture(string $path): string
 {
-    // ..
+    return \file_get_contents(\realpath(__DIR__."/fixtures/{$path}.json"));
+}
+
+function fakeSequence(string $fqcn, string $path)
+{
+    Http::fakeSequence()->push(fixture("reference/{$path}"));
+
+    return new $fqcn(new Client([]));
 }

@@ -5,28 +5,28 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
-use Spatie\LaravelData\Data;
+use Spatie\LaravelData\DataCollection;
 
-final class Track extends Data
+final class Track extends AbstractModel
 {
     public function __construct(
         #[DataCollectionOf(Artist::class)]
-        public array $artists,
-        public array $available_markets,
-        public int $disc_number,
-        public int $duration_ms,
-        public bool $explicit,
-        public ExternalUrls $external_urls,
-        public string $href,
-        public string $id,
-        public bool $is_playable,
-        public LinkedFrom $linked_from,
-        public Restrictions $restrictions,
-        public string $name,
-        public string $preview_url,
-        public int $track_number,
-        public string $type,
-        public string $uri,
-        public bool $is_local,
+        public readonly DataCollection $artists,
+        public readonly array $available_markets,
+        public readonly int $disc_number,
+        public readonly int $duration_ms,
+        public readonly bool $explicit,
+        public readonly ExternalUrls $external_urls,
+        public readonly string $href,
+        public readonly string $id,
+        public readonly bool $is_playable,
+        public readonly LinkedFrom $linked_from,
+        public readonly Restrictions $restrictions,
+        public readonly string $name,
+        public readonly string $preview_url,
+        public readonly int $track_number,
+        public readonly string $type,
+        public readonly string $uri,
+        public readonly bool $is_local,
     ) {}
 }

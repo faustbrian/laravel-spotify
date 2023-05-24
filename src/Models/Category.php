@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
-use Spatie\LaravelData\Data;
+use Spatie\LaravelData\DataCollection;
 
-final class Category extends Data
+final class Category extends AbstractModel
 {
     public function __construct(
-        public string $href,
+        public readonly string $href,
         #[DataCollectionOf(Icon::class)]
-        public array $icons,
-        public string $id,
-        public string $name,
+        public readonly DataCollection $icons,
+        public readonly string $id,
+        public readonly string $name,
     ) {}
 }

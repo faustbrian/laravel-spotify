@@ -5,31 +5,31 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
-use Spatie\LaravelData\Data;
+use Spatie\LaravelData\DataCollection;
 
-final class Chapter extends Data
+final class Chapter extends AbstractModel
 {
     public function __construct(
-        public string $audio_preview_url,
-        public array $available_markets,
-        public int $chapter_number,
-        public string $description,
-        public string $html_description,
-        public int $duration_ms,
-        public bool $explicit,
-        public ExternalUrls $external_urls,
-        public string $href,
-        public string $id,
+        public readonly string $audio_preview_url,
+        public readonly array $available_markets,
+        public readonly int $chapter_number,
+        public readonly string $description,
+        public readonly string $html_description,
+        public readonly int $duration_ms,
+        public readonly bool $explicit,
+        public readonly ExternalUrls $external_urls,
+        public readonly string $href,
+        public readonly string $id,
         #[DataCollectionOf(Image::class)]
-        public array $images,
-        public bool $is_playable,
-        public array $languages,
-        public string $name,
-        public string $release_date,
-        public string $release_date_precision,
-        public ResumePoint $resume_point,
-        public string $type,
-        public string $uri,
-        public Restrictions $restrictions,
+        public readonly DataCollection $images,
+        public readonly bool $is_playable,
+        public readonly array $languages,
+        public readonly string $name,
+        public readonly string $release_date,
+        public readonly string $release_date_precision,
+        public readonly ResumePoint $resume_point,
+        public readonly string $type,
+        public readonly string $uri,
+        public readonly Restrictions $restrictions,
     ) {}
 }

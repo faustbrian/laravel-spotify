@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-use Spatie\LaravelData\Data;
-
-final class Follower extends Data
+final class Follower extends AbstractModel
 {
     public function __construct(
-        public string $href,
-        public int $total,
+        public readonly string $href,
+        public readonly int $total,
     ) {}
 }

@@ -10,7 +10,7 @@ final readonly class Search extends AbstractReference
 {
     public function album(string $query, array $context = []): Response
     {
-        return $this->client->get('search', [
+        return $this->get('search', [
             ...$context,
             'type' => 'album',
             'query' => $query,
@@ -19,7 +19,7 @@ final readonly class Search extends AbstractReference
 
     public function artist(string $query, array $context = []): Response
     {
-        return $this->client->get('search', [
+        return $this->get('search', [
             ...$context,
             'type' => 'artist',
             'query' => $query,
@@ -28,7 +28,7 @@ final readonly class Search extends AbstractReference
 
     public function audiobook(string $query, array $context = []): Response
     {
-        return $this->client->get('search', [
+        return $this->get('search', [
             ...$context,
             'type' => 'audiobook',
             'query' => $query,
@@ -37,7 +37,7 @@ final readonly class Search extends AbstractReference
 
     public function episode(string $query, array $context = []): Response
     {
-        return $this->client->get('search', [
+        return $this->get('search', [
             ...$context,
             'type' => 'episode',
             'query' => $query,
@@ -46,7 +46,7 @@ final readonly class Search extends AbstractReference
 
     public function playlist(string $query, array $context = []): Response
     {
-        return $this->client->get('search', [
+        return $this->get('search', [
             ...$context,
             'type' => 'playlist',
             'query' => $query,
@@ -55,7 +55,7 @@ final readonly class Search extends AbstractReference
 
     public function show(string $query, array $context = []): Response
     {
-        return $this->client->get('search', [
+        return $this->get('search', [
             ...$context,
             'type' => 'show',
             'query' => $query,
@@ -64,7 +64,7 @@ final readonly class Search extends AbstractReference
 
     public function track(string $query, array $context = []): Response
     {
-        return $this->client->get('search', [
+        return $this->get('search', [
             ...$context,
             'type' => 'track',
             'query' => $query,

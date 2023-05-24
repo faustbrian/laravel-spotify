@@ -10,6 +10,6 @@ final readonly class Genres extends AbstractReference
 {
     public function seeds(array $context = []): Response
     {
-        return $this->client->get('recommendations/available-genre-seeds', $context);
+        return $this->get('recommendations/available-genre-seeds', $context);
     }
 }

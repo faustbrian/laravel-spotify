@@ -4,56 +4,65 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use Illuminate\Http\Client\Response;
+use BombenProdukt\Spotify\Models\Album;
+use BombenProdukt\Spotify\Models\NewReleasesResponse;
+use BombenProdukt\Spotify\Models\SavedAlbumsResponse;
+use BombenProdukt\Spotify\Models\Tracks;
+use Spatie\LaravelData\DataCollection;
 
 final readonly class Albums extends AbstractReference
 {
-    public function findById(string $id, array $context = []): Response
+    public function findById(string $id, array $context = []): Album
     {
-        return $this->client->get("albums/{$id}", $context);
+        return Album::fromResponse($this->get("albums/{$id}", $context));
     }
 
-    public function findByIds(array $ids, array $context = []): Response
+    /**
+     * @return DataCollection<string, Album>
+     */
+    public function findByIds(array $ids, array $context = []): DataCollection
     {
-        return $this->client->get('albums', [
-            ...$context,
-            'ids' => \implode(',', $ids),
-        ]);
+        return Album::collection(
+            $this->get('albums', [
+                ...$context,
+                'ids' => $this->concat($ids),
+            ])->json('albums'),
+        );
     }
 
-    public function tracks(string $id, array $context = []): Response
+    public function tracks(string $id, array $context = []): Tracks
     {
-        return $this->client->get("albums/{$id}/tracks", $context);
+        return Tracks::fromResponse($this->get("albums/{$id}/tracks", $context));
     }
 
-    public function savedByCurrentUser(array $context = []): Response
+    public function savedByCurrentUser(array $context = []): SavedAlbumsResponse
     {
-        return $this->client->get('me/albums', $context);
+        return SavedAlbumsResponse::fromResponse($this->get('me/albums', $context));
     }
 
-    public function saveToCurrentUser(array $ids): Response
+    public function saveToCurrentUser(array $ids): bool
     {
-        return $this->client->put('me/albums', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->put('me/albums', [
+            'ids' => $this->concat($ids),
+        ])->status() === 200;
     }
 
-    public function deleteFromCurrentUser(array $ids): Response
+    public function deleteFromCurrentUser(array $ids): bool
     {
-        return $this->client->delete('me/albums', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->delete('me/albums', [
+            'ids' => $this->concat($ids),
+        ])->status() === 200;
     }
 
-    public function checkSavedByCurrentUser(array $ids): Response
+    public function checkSavedByCurrentUser(array $ids): array
     {
-        return $this->client->get('me/albums/contains', [
-            'ids' => \implode(',', $ids),
-        ]);
+        return $this->get('me/albums/contains', [
+            'ids' => $this->concat($ids),
+        ])->json();
     }
 
-    public function newReleases(array $context = []): Response
+    public function newReleases(array $context = []): NewReleasesResponse
     {
-        return $this->client->get('browse/new-releases', $context);
+        return NewReleasesResponse::from($this->get('browse/new-releases', $context)->json('albums'));
     }
 }

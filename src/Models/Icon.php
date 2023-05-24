@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-use Spatie\LaravelData\Data;
-
-final class Icon extends Data
+final class Icon extends AbstractModel
 {
     public function __construct(
-        public ?int $height,
-        public string $url,
-        public ?int $width,
+        public readonly ?int $height,
+        public readonly string $url,
+        public readonly ?int $width,
     ) {}
 }

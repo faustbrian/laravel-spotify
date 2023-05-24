@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-use Spatie\LaravelData\Data;
-
-final class LinkedFrom extends Data
+final class LinkedFrom extends AbstractModel
 {
     public function __construct(
-        public ExternalUrls $external_urls,
-        public string $href,
-        public string $id,
-        public string $type,
-        public string $uri,
+        public readonly ?ExternalUrls $external_urls,
+        public readonly ?string $href,
+        public readonly ?string $id,
+        public readonly ?string $type,
+        public readonly ?string $uri,
     ) {}
 }
