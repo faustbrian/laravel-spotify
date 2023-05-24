@@ -4,70 +4,102 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use Illuminate\Http\Client\Response;
+use BombenProdukt\Spotify\Models\AlbumSearchResponse;
+use BombenProdukt\Spotify\Models\ArtistSearchResponse;
+use BombenProdukt\Spotify\Models\AudiobookSearchResponse;
+use BombenProdukt\Spotify\Models\EpisodeSearchResponse;
+use BombenProdukt\Spotify\Models\PlaylistSearchResponse;
+use BombenProdukt\Spotify\Models\SearchResponse;
+use BombenProdukt\Spotify\Models\ShowSearchResponse;
+use BombenProdukt\Spotify\Models\TrackSearchResponse;
 
 final readonly class Search extends AbstractReference
 {
-    public function album(string $query, array $context = []): Response
+    public function search(array $types, string $query, array $context = []): SearchResponse
     {
-        return $this->get('search', [
-            ...$context,
-            'type' => 'album',
-            'query' => $query,
-        ]);
+        return SearchResponse::from(
+            $this->get('search', [
+                ...$context,
+                'type' => $this->concat($types),
+                'query' => $query,
+            ])->json(),
+        );
     }
 
-    public function artist(string $query, array $context = []): Response
+    public function album(string $query, array $context = []): AlbumSearchResponse
     {
-        return $this->get('search', [
-            ...$context,
-            'type' => 'artist',
-            'query' => $query,
-        ]);
+        return AlbumSearchResponse::from(
+            $this->get('search', [
+                ...$context,
+                'type' => 'album',
+                'query' => $query,
+            ])->json('albums'),
+        );
     }
 
-    public function audiobook(string $query, array $context = []): Response
+    public function artist(string $query, array $context = []): ArtistSearchResponse
     {
-        return $this->get('search', [
-            ...$context,
-            'type' => 'audiobook',
-            'query' => $query,
-        ]);
+        return ArtistSearchResponse::from(
+            $this->get('search', [
+                ...$context,
+                'type' => 'artist',
+                'query' => $query,
+            ])->json('artists'),
+        );
     }
 
-    public function episode(string $query, array $context = []): Response
+    public function audiobook(string $query, array $context = []): AudiobookSearchResponse
     {
-        return $this->get('search', [
-            ...$context,
-            'type' => 'episode',
-            'query' => $query,
-        ]);
+        return AudiobookSearchResponse::from(
+            $this->get('search', [
+                ...$context,
+                'type' => 'audiobook',
+                'query' => $query,
+            ])->json('audiobooks'),
+        );
     }
 
-    public function playlist(string $query, array $context = []): Response
+    public function episode(string $query, array $context = []): EpisodeSearchResponse
     {
-        return $this->get('search', [
-            ...$context,
-            'type' => 'playlist',
-            'query' => $query,
-        ]);
+        return EpisodeSearchResponse::from(
+            $this->get('search', [
+                ...$context,
+                'type' => 'episode',
+                'query' => $query,
+            ])->json('episodes'),
+        );
     }
 
-    public function show(string $query, array $context = []): Response
+    public function playlist(string $query, array $context = []): PlaylistSearchResponse
     {
-        return $this->get('search', [
-            ...$context,
-            'type' => 'show',
-            'query' => $query,
-        ]);
+        return PlaylistSearchResponse::from(
+            $this->get('search', [
+                ...$context,
+                'type' => 'playlist',
+                'query' => $query,
+            ])->json('playlists'),
+        );
     }
 
-    public function track(string $query, array $context = []): Response
+    public function show(string $query, array $context = []): ShowSearchResponse
     {
-        return $this->get('search', [
-            ...$context,
-            'type' => 'track',
-            'query' => $query,
-        ]);
+        return ShowSearchResponse::from(
+            $this->get('search', [
+                ...$context,
+                'type' => 'show',
+                'query' => $query,
+            ])->json('shows'),
+        );
+    }
+
+    public function track(string $query, array $context = []): TrackSearchResponse
+    {
+        return TrackSearchResponse::from(
+            $this->get('search', [
+                ...$context,
+                'type' => 'track',
+                'query' => $query,
+            ])->json('tracks'),
+        );
     }
 }

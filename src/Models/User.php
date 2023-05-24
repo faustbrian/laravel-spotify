@@ -16,7 +16,7 @@ final class User extends AbstractModel
         public readonly string $href,
         public readonly string $id,
         #[DataCollectionOf(Image::class)]
-        public readonly DataCollection $images,
+        public readonly ?DataCollection $images,
         public readonly string $type,
         public readonly string $uri,
     ) {}

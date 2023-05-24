@@ -21,6 +21,11 @@ parameters:
 			path: src/Models/AlbumSavedByCurrentUserResponse.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AlbumSearchResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/AlbumSearchResponse.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Artist\\:\\:__construct\\(\\) has parameter \\$images with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/Artist.php
@@ -29,6 +34,11 @@ parameters:
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\ArtistAlbumsResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/ArtistAlbumsResponse.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\ArtistSearchResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/ArtistSearchResponse.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AudioAnalysis\\:\\:__construct\\(\\) has parameter \\$bars with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
@@ -86,6 +96,11 @@ parameters:
 			path: src/Models/AudiobookSavedByUserResponse.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AudiobookSearchResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/AudiobookSearchResponse.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Categories\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/Categories.php
@@ -136,6 +151,11 @@ parameters:
 			path: src/Models/EpisodeSavedByCurrentUserResponse.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\EpisodeSearchResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/EpisodeSearchResponse.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Episodes\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/Episodes.php
@@ -144,6 +164,11 @@ parameters:
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\NewReleasesResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/NewReleasesResponse.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\PlaylistSearchResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/PlaylistSearchResponse.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\RecentlyPlayedTracks\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
@@ -171,6 +196,11 @@ parameters:
 			path: src/Models/ShowSavedByCurrentUserResponse.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\ShowSearchResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/ShowSearchResponse.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Track\\:\\:__construct\\(\\) has parameter \\$artists with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/Track.php
@@ -189,6 +219,11 @@ parameters:
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\TrackSavedByCurrentUserResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/TrackSavedByCurrentUserResponse.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\TrackSearchResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/TrackSearchResponse.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Tracks\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
