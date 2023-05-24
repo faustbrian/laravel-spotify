@@ -33,6 +33,6 @@ final class Audiobook extends AbstractModel
         public readonly string $type,
         public readonly string $uri,
         public readonly int $total_chapters,
-        public readonly Chapters $chapters,
+        public readonly ?Chapters $chapters,
     ) {}
 }

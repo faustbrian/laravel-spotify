@@ -45,10 +45,10 @@ final readonly class Shows extends AbstractReference
         ])->status() === 200;
     }
 
-    public function checkSavedByCurrentUser(array $ids): Response
+    public function checkSavedByCurrentUser(array $ids): array
     {
         return $this->get('me/shows/contains', [
             'ids' => $this->concat($ids),
-        ]);
+        ])->json();
     }
 }

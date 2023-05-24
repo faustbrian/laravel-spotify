@@ -6,7 +6,7 @@ namespace BombenProdukt\Spotify\Facades;
 
 use BombenProdukt\Spotify\Reference\Albums;
 use BombenProdukt\Spotify\Reference\Artists;
-use BombenProdukt\Spotify\Reference\Audibooks;
+use BombenProdukt\Spotify\Reference\Audiobooks;
 use BombenProdukt\Spotify\Reference\Categories;
 use BombenProdukt\Spotify\Reference\Chapters;
 use BombenProdukt\Spotify\Reference\Episodes;
@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static Albums     albums()
  * @method static Artists    artists()
- * @method static Audibooks  audibooks()
+ * @method static Audiobooks audiobooks()
  * @method static Categories categories()
  * @method static Chapters   chapters()
  * @method static Episodes   episodes()

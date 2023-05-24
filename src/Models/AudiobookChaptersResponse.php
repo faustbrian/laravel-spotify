@@ -2,14 +2,12 @@
 
 declare(strict_types=1);
 
-namespace BombenProdukt\Spotify\Models\Artist;
+namespace BombenProdukt\Spotify\Models;
 
-use BombenProdukt\Spotify\Models\AbstractModel;
-use BombenProdukt\Spotify\Models\Album;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\DataCollection;
 
-final class TopTracksResponse extends AbstractModel
+final class AudiobookChaptersResponse extends AbstractModel
 {
     public function __construct(
         public readonly string $href,
@@ -18,7 +16,7 @@ final class TopTracksResponse extends AbstractModel
         public readonly int $offset,
         public readonly string $previous,
         public readonly int $total,
-        #[DataCollectionOf(Album::class)]
+        #[DataCollectionOf(Chapter::class)]
         public readonly DataCollection $items,
     ) {}
 }

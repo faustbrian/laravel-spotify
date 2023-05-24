@@ -6,7 +6,7 @@ namespace BombenProdukt\Spotify;
 
 use BombenProdukt\Spotify\Reference\Albums;
 use BombenProdukt\Spotify\Reference\Artists;
-use BombenProdukt\Spotify\Reference\Audibooks;
+use BombenProdukt\Spotify\Reference\Audiobooks;
 use BombenProdukt\Spotify\Reference\Categories;
 use BombenProdukt\Spotify\Reference\Chapters;
 use BombenProdukt\Spotify\Reference\Client;
@@ -39,9 +39,9 @@ final readonly class Spotify
         return new Artists($this->client);
     }
 
-    public function audibooks(): Audibooks
+    public function audiobooks(): Audiobooks
     {
-        return new Audibooks($this->client);
+        return new Audiobooks($this->client);
     }
 
     public function categories(): Categories
