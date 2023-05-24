@@ -4,85 +4,110 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use Illuminate\Http\Client\Response;
+use BombenProdukt\Spotify\Models\Device;
+use BombenProdukt\Spotify\Models\PlayerQueueResponse;
+use BombenProdukt\Spotify\Models\PlayerState;
+use BombenProdukt\Spotify\Models\RecentlyPlayedResponse;
+use Spatie\LaravelData\DataCollection;
 
 final readonly class Player extends AbstractReference
 {
-    public function state(array $context = []): Response
+    public function state(array $context = []): PlayerState
     {
-        return $this->get('me/player', $context);
+        return PlayerState::from($this->get('me/player', $context)->json());
     }
 
-    public function transfer(array $context = []): Response
+    public function transfer(array $context = []): bool
     {
-        return $this->put('me/player', $context);
+        return $this
+            ->put('me/player', $context)
+            ->status() === 204;
     }
 
-    public function devices(): Response
+    /**
+     * @return DataCollection<Device>
+     */
+    public function devices(): DataCollection
     {
-        return $this->get('me/player/devices');
+        return Device::collection($this->get('me/player/devices')->json('devices'));
     }
 
-    public function currentlyPlaying(array $context = []): Response
+    public function currentlyPlaying(array $context = []): PlayerState
     {
-        return $this->get('me/player/currently-playing', $context);
+        return PlayerState::from($this->get('me/player/currently-playing', $context)->json());
     }
 
-    public function play(string $deviceId, array $context = []): Response
+    public function play(string $deviceId, array $context = []): bool
     {
-        return $this->put('me/player/play', \array_merge(['device_id' => $deviceId], $context));
+        return $this
+            ->put('me/player/play', \array_merge(['device_id' => $deviceId], $context))
+            ->status() === 204;
     }
 
-    public function pause(string $deviceId): Response
+    public function pause(string $deviceId): bool
     {
-        return $this->put('me/player/pause', ['device_id' => $deviceId]);
+        return $this
+            ->put('me/player/pause', ['device_id' => $deviceId])
+            ->status() === 204;
     }
 
-    public function skipToPrevious(string $deviceId): Response
+    public function skipToPrevious(string $deviceId): bool
     {
-        return $this->post('me/player/previous', ['device_id' => $deviceId]);
+        return $this
+            ->post('me/player/previous', ['device_id' => $deviceId])
+            ->status() === 204;
     }
 
-    public function skipToNext(string $deviceId): Response
+    public function skipToNext(string $deviceId): bool
     {
-        return $this->post('me/player/next', ['device_id' => $deviceId]);
+        return $this
+            ->post('me/player/next', ['device_id' => $deviceId])
+            ->status() === 204;
     }
 
-    public function seek(string $deviceId, int $positionMs): Response
+    public function seek(string $deviceId, int $positionMs): bool
     {
-        return $this->put('me/player/seek', ['device_id' => $deviceId], ['position_ms' => $positionMs]);
+        return $this
+            ->put('me/player/seek', ['device_id' => $deviceId], ['position_ms' => $positionMs])
+            ->status() === 204;
     }
 
-    public function repeatMode(string $deviceId, string $state): Response
+    public function repeatMode(string $deviceId, string $state): bool
     {
-        return $this->put('me/player/repeat', ['device_id' => $deviceId], ['state' => $state]);
+        return $this
+            ->put('me/player/repeat', ['device_id' => $deviceId], ['state' => $state])
+            ->status() === 204;
     }
 
-    public function volume(string $deviceId, int $volumePercent): Response
+    public function volume(string $deviceId, int $volumePercent): bool
     {
-        return $this->put('me/player/volume', ['device_id' => $deviceId], ['volume_percent' => $volumePercent]);
+        return $this
+            ->put('me/player/volume', ['device_id' => $deviceId], ['volume_percent' => $volumePercent])
+            ->status() === 204;
     }
 
-    public function shuffle(string $deviceId, string $state): Response
+    public function shuffle(string $deviceId, string $state): bool
     {
-        return $this->put('me/player/shuffle', ['device_id' => $deviceId], ['state' => $state]);
+        return $this
+            ->put('me/player/shuffle', ['device_id' => $deviceId], ['state' => $state])
+            ->status() === 204;
     }
 
-    public function recentlyPlayed(array $context = []): Response
+    public function recentlyPlayed(array $context = []): RecentlyPlayedResponse
     {
-        return $this->post('me/player/recently-played', $context);
+        return RecentlyPlayedResponse::from($this->get('me/player/recently-played', $context)->json());
     }
 
-    public function queue(): Response
+    public function queue(): PlayerQueueResponse
     {
-        return $this->get('me/player/queue');
+        return PlayerQueueResponse::from($this->get('me/player/queue')->json());
     }
 
-    public function queueTrack(string $deviceId, string $uri): Response
+    public function queueTrack(string $deviceId, string $uri): bool
     {
         return $this->post('me/player/queue', [
             'device_id' => $deviceId,
             'uri' => $uri,
-        ]);
+        ])->status() === 204;
     }
 }

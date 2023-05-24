@@ -136,11 +136,6 @@ parameters:
 			path: src/Models/CurrentUserTopTracks.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\CurrentlyPlayingAndQueue\\:\\:__construct\\(\\) has parameter \\$queue with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: src/Models/CurrentlyPlayingAndQueue.php
-
-		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Episode\\:\\:__construct\\(\\) has parameter \\$images with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/Episode.php
@@ -166,6 +161,11 @@ parameters:
 			path: src/Models/NewReleasesResponse.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\PlayerQueueResponse\\:\\:__construct\\(\\) has parameter \\$queue with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/PlayerQueueResponse.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\PlaylistSearchResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/PlaylistSearchResponse.php
@@ -179,6 +179,11 @@ parameters:
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\PlaylistsResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/PlaylistsResponse.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\RecentlyPlayedResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/RecentlyPlayedResponse.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\RecentlyPlayedTracks\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
@@ -251,17 +256,17 @@ parameters:
 			path: src/Models/UserFollowedArtists.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\:\\:delete\\(\\) invoked with 3 parameters, 1\\-2 required\\.$#"
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:delete\\(\\)\\.$#"
 			count: 1
-			path: src/Reference/AbstractReference.php
+			path: src/Reference/Albums.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\:\\:get\\(\\) invoked with 3 parameters, 1\\-2 required\\.$#"
-			count: 1
-			path: src/Reference/AbstractReference.php
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:get\\(\\)\\.$#"
+			count: 6
+			path: src/Reference/Albums.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:put\\(\\)\\.$#"
 			count: 1
 			path: src/Reference/Albums.php
 
@@ -271,9 +276,9 @@ parameters:
 			path: src/Reference/Albums.php
 
 		-
-			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
-			count: 1
-			path: src/Reference/Albums.php
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:get\\(\\)\\.$#"
+			count: 5
+			path: src/Reference/Artists.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:findByIds\\(\\) return type with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
@@ -306,12 +311,17 @@ parameters:
 			path: src/Reference/Artists.php
 
 		-
-			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
-			count: 3
-			path: src/Reference/Artists.php
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Audiobooks\\:\\:delete\\(\\)\\.$#"
+			count: 1
+			path: src/Reference/Audiobooks.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Audiobooks\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Audiobooks\\:\\:get\\(\\)\\.$#"
+			count: 5
+			path: src/Reference/Audiobooks.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Audiobooks\\:\\:put\\(\\)\\.$#"
 			count: 1
 			path: src/Reference/Audiobooks.php
 
@@ -326,9 +336,14 @@ parameters:
 			path: src/Reference/Audiobooks.php
 
 		-
-			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
-			count: 1
-			path: src/Reference/Audiobooks.php
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Categories\\:\\:get\\(\\)\\.$#"
+			count: 2
+			path: src/Reference/Categories.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Chapters\\:\\:get\\(\\)\\.$#"
+			count: 2
+			path: src/Reference/Chapters.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Chapters\\:\\:findByIds\\(\\) return type with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
@@ -337,11 +352,6 @@ parameters:
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Chapters\\:\\:findByIds\\(\\) should return iterable\\<BombenProdukt\\\\Spotify\\\\Models\\\\Chapter\\>&Spatie\\\\LaravelData\\\\DataCollection but returns Spatie\\\\LaravelData\\\\CursorPaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Chapter\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Chapter\\>\\|Spatie\\\\LaravelData\\\\PaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Chapter\\>\\.$#"
-			count: 1
-			path: src/Reference/Chapters.php
-
-		-
-			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
 			count: 1
 			path: src/Reference/Chapters.php
 
@@ -356,7 +366,17 @@ parameters:
 			path: src/Reference/Client.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:delete\\(\\)\\.$#"
+			count: 1
+			path: src/Reference/Episodes.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:get\\(\\)\\.$#"
+			count: 4
+			path: src/Reference/Episodes.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Episodes\\:\\:put\\(\\)\\.$#"
 			count: 1
 			path: src/Reference/Episodes.php
 
@@ -371,19 +391,59 @@ parameters:
 			path: src/Reference/Episodes.php
 
 		-
-			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
-			count: 1
-			path: src/Reference/Episodes.php
-
-		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Genres\\:\\:seeds\\(\\) should return array but returns mixed\\.$#"
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Genres\\:\\:get\\(\\)\\.$#"
 			count: 1
 			path: src/Reference/Genres.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Markets\\:\\:all\\(\\) should return array but returns mixed\\.$#"
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Markets\\:\\:get\\(\\)\\.$#"
 			count: 1
 			path: src/Reference/Markets.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:get\\(\\)\\.$#"
+			count: 5
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:post\\(\\)\\.$#"
+			count: 3
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:put\\(\\)\\.$#"
+			count: 7
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:devices\\(\\) return type with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Player\\:\\:devices\\(\\) should return iterable\\<BombenProdukt\\\\Spotify\\\\Models\\\\Device\\>&Spatie\\\\LaravelData\\\\DataCollection but returns Spatie\\\\LaravelData\\\\CursorPaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Device\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Device\\>\\|Spatie\\\\LaravelData\\\\PaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Device\\>\\.$#"
+			count: 1
+			path: src/Reference/Player.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:delete\\(\\)\\.$#"
+			count: 1
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:get\\(\\)\\.$#"
+			count: 7
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:post\\(\\)\\.$#"
+			count: 2
+			path: src/Reference/Playlists.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:put\\(\\)\\.$#"
+			count: 3
+			path: src/Reference/Playlists.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Playlists\\:\\:coverImage\\(\\) return type with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
@@ -396,12 +456,22 @@ parameters:
 			path: src/Reference/Playlists.php
 
 		-
-			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
-			count: 1
-			path: src/Reference/Playlists.php
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Search\\:\\:get\\(\\)\\.$#"
+			count: 8
+			path: src/Reference/Search.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:delete\\(\\)\\.$#"
+			count: 1
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:get\\(\\)\\.$#"
+			count: 5
+			path: src/Reference/Shows.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Shows\\:\\:put\\(\\)\\.$#"
 			count: 1
 			path: src/Reference/Shows.php
 
@@ -416,9 +486,19 @@ parameters:
 			path: src/Reference/Shows.php
 
 		-
-			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:delete\\(\\)\\.$#"
 			count: 1
-			path: src/Reference/Shows.php
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:get\\(\\)\\.$#"
+			count: 8
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:put\\(\\)\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:audioFeatures\\(\\) return type with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
@@ -427,11 +507,6 @@ parameters:
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:audioFeatures\\(\\) should return iterable\\<BombenProdukt\\\\Spotify\\\\Models\\\\AudioFeature\\>&Spatie\\\\LaravelData\\\\DataCollection but returns Spatie\\\\LaravelData\\\\CursorPaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\AudioFeature\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\AudioFeature\\>\\|Spatie\\\\LaravelData\\\\PaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\AudioFeature\\>\\.$#"
-			count: 1
-			path: src/Reference/Tracks.php
-
-		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
 			count: 1
 			path: src/Reference/Tracks.php
 
@@ -446,23 +521,18 @@ parameters:
 			path: src/Reference/Tracks.php
 
 		-
-			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
-			count: 2
-			path: src/Reference/Tracks.php
-
-		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsArtist\\(\\) should return array but returns mixed\\.$#"
-			count: 1
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:delete\\(\\)\\.$#"
+			count: 3
 			path: src/Reference/Users.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsPlaylist\\(\\) should return array but returns mixed\\.$#"
-			count: 1
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:get\\(\\)\\.$#"
+			count: 8
 			path: src/Reference/Users.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsUser\\(\\) should return array but returns mixed\\.$#"
-			count: 1
+			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:put\\(\\)\\.$#"
+			count: 3
 			path: src/Reference/Users.php
 
 		-

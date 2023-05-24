@@ -8,7 +8,6 @@ use BombenProdukt\Spotify\Models\Playlist;
 use BombenProdukt\Spotify\Models\PlaylistCoverImage;
 use BombenProdukt\Spotify\Models\PlaylistsResponse;
 use BombenProdukt\Spotify\Models\PlaylistTracksResponse;
-use Illuminate\Http\Client\Response;
 use Spatie\LaravelData\DataCollection;
 
 final readonly class Playlists extends AbstractReference
@@ -28,27 +27,27 @@ final readonly class Playlists extends AbstractReference
         return PlaylistTracksResponse::from($this->get("playlists/{$id}/tracks", $context)->json());
     }
 
-    public function updateTracks(string $id, array $uris): Response
+    public function updateTracks(string $id, array $uris): bool
     {
         return $this->put("playlists/{$id}/tracks", [
             'uris' => $this->concat($uris),
-        ]);
+        ])->status() === 200;
     }
 
-    public function addTracks(string $id, array $uris, array $context = []): Response
+    public function addTracks(string $id, array $uris, array $context = []): bool
     {
         return $this->post("playlists/{$id}/tracks", [
             ...$context,
             'uris' => $this->concat($uris),
-        ]);
+        ])->status() === 200;
     }
 
-    public function removeTracks(string $id, array $uris, array $context = []): Response
+    public function removeTracks(string $id, array $uris, array $context = []): bool
     {
         return $this->delete("playlists/{$id}/tracks", [
             ...$context,
             'tracks' => collect($uris)->map(fn (string $uri): array => ['uri' => $uri])->toArray(),
-        ]);
+        ])->status() === 200;
     }
 
     public function allForCurrentUser(array $context = []): PlaylistsResponse
@@ -61,9 +60,11 @@ final readonly class Playlists extends AbstractReference
         return PlaylistsResponse::from($this->get("users/{$userId}/playlists", $context)->json());
     }
 
-    public function create(string $userId, array $context = []): Response
+    public function create(string $userId, array $context = []): bool
     {
-        return $this->post("users/{$userId}/playlists", $context);
+        return $this
+            ->post("users/{$userId}/playlists", $context)
+            ->status() === 201;
     }
 
     public function featured(array $context = []): PlaylistsResponse
@@ -84,8 +85,10 @@ final readonly class Playlists extends AbstractReference
         return PlaylistCoverImage::collection($this->get("playlists/{$playlistId}/images", $context)->json());
     }
 
-    public function updateCoverImage(string $playlistId, array $context = []): Response
+    public function updateCoverImage(string $playlistId, array $context = []): bool
     {
-        return $this->put("playlists/{$playlistId}/images", $context);
+        return $this
+            ->put("playlists/{$playlistId}/images", $context)
+            ->status() === 202;
     }
 }

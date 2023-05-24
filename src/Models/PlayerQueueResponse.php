@@ -7,7 +7,7 @@ namespace BombenProdukt\Spotify\Models;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\DataCollection;
 
-final class CurrentlyPlayingAndQueue extends AbstractModel
+final class PlayerQueueResponse extends AbstractModel
 {
     public function __construct(
         public readonly Track $currently_playing,
