@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class PlayerState extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class PlayerState extends Data
 {
     public function __construct(
         public readonly Device $device,

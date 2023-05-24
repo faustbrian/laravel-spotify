@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
+use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
-final class PlaylistTracksResponse extends AbstractModel
+final class PlaylistTracksResponse extends Data
 {
     public function __construct(
         public readonly string $href,

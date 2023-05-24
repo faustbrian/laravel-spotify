@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class AudioAnalysisMeta extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class AudioAnalysisMeta extends Data
 {
     public function __construct(
         public string $analyzer_version,

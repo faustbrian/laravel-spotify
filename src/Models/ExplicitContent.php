@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class ExplicitContent extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class ExplicitContent extends Data
 {
     public function __construct(
         public readonly bool $filter_enabled,

@@ -12,7 +12,7 @@ final readonly class Episodes extends AbstractReference
 {
     public function findById(string $id, array $context = []): Episode
     {
-        return Episode::fromResponse($this->get("episodes/{$id}", $context));
+        return Episode::from($this->get("episodes/{$id}", $context)->json());
     }
 
     /**
@@ -30,7 +30,7 @@ final readonly class Episodes extends AbstractReference
 
     public function savedByCurrentUser(array $context = []): EpisodeSavedByCurrentUserResponse
     {
-        return EpisodeSavedByCurrentUserResponse::fromResponse($this->get('me/episodes', $context));
+        return EpisodeSavedByCurrentUserResponse::from($this->get('me/episodes', $context)->json());
     }
 
     public function saveToCurrentUser(array $ids): bool

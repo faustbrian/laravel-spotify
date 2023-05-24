@@ -14,7 +14,7 @@ final readonly class Artists extends AbstractReference
 {
     public function findById(string $id): Artist
     {
-        return Artist::fromResponse($this->get("artists/{$id}"));
+        return Artist::from($this->get("artists/{$id}")->json());
     }
 
     /**
@@ -31,7 +31,7 @@ final readonly class Artists extends AbstractReference
 
     public function albums(string $id, array $context = []): ArtistAlbumsResponse
     {
-        return ArtistAlbumsResponse::fromResponse($this->get("artists/{$id}/albums", $context));
+        return ArtistAlbumsResponse::from($this->get("artists/{$id}/albums", $context)->json());
     }
 
     /**

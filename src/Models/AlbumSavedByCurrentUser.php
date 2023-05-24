@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class AlbumSavedByCurrentUser extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class AlbumSavedByCurrentUser extends Data
 {
     public function __construct(
         public readonly string $added_at,

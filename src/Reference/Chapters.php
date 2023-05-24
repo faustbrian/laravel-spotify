@@ -12,7 +12,7 @@ final readonly class Chapters extends AbstractReference
 {
     public function findById(string $id, array $context = []): Chapter
     {
-        return Chapter::fromResponse($this->get("chapters/{$id}", $context));
+        return Chapter::from($this->get("chapters/{$id}", $context)->json());
     }
 
     /**

@@ -15,6 +15,6 @@ final readonly class Categories extends AbstractReference
 
     public function findById(string $id, array $context = []): Models\Category
     {
-        return Models\Category::fromResponse($this->get("/browse/categories/{$id}", $context));
+        return Models\Category::from($this->get("/browse/categories/{$id}", $context)->json());
     }
 }

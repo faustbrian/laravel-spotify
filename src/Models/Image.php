@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class Image extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class Image extends Data
 {
     public function __construct(
         public readonly string $url,

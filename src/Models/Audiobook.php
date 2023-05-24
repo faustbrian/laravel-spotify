@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
+use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
-final class Audiobook extends AbstractModel
+final class Audiobook extends Data
 {
     public function __construct(
         #[DataCollectionOf(Author::class)]

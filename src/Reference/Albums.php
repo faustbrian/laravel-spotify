@@ -14,7 +14,7 @@ final readonly class Albums extends AbstractReference
 {
     public function findById(string $id, array $context = []): Album
     {
-        return Album::fromResponse($this->get("albums/{$id}", $context));
+        return Album::from($this->get("albums/{$id}", $context)->json());
     }
 
     /**
@@ -32,12 +32,12 @@ final readonly class Albums extends AbstractReference
 
     public function tracks(string $id, array $context = []): Tracks
     {
-        return Tracks::fromResponse($this->get("albums/{$id}/tracks", $context));
+        return Tracks::from($this->get("albums/{$id}/tracks", $context)->json());
     }
 
     public function savedByCurrentUser(array $context = []): AlbumSavedByCurrentUserResponse
     {
-        return AlbumSavedByCurrentUserResponse::fromResponse($this->get('me/albums', $context));
+        return AlbumSavedByCurrentUserResponse::from($this->get('me/albums', $context)->json());
     }
 
     public function saveToCurrentUser(array $ids): bool

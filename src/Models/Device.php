@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class Device extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class Device extends Data
 {
     public function __construct(
         public readonly string $id,

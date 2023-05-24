@@ -13,7 +13,7 @@ final readonly class Shows extends AbstractReference
 {
     public function findById(string $id, array $context = []): Show
     {
-        return Show::fromResponse($this->get("shows/{$id}", $context));
+        return Show::from($this->get("shows/{$id}", $context)->json());
     }
 
     /**
@@ -31,12 +31,12 @@ final readonly class Shows extends AbstractReference
 
     public function episodes(array $context = []): ShowEpisodesResponse
     {
-        return ShowEpisodesResponse::fromResponse($this->get('shows', $context));
+        return ShowEpisodesResponse::from($this->get('shows', $context)->json());
     }
 
     public function savedByCurrentUser(array $context = []): ShowSavedByCurrentUserResponse
     {
-        return ShowSavedByCurrentUserResponse::fromResponse($this->get('me/shows', $context));
+        return ShowSavedByCurrentUserResponse::from($this->get('me/shows', $context)->json());
     }
 
     public function saveToCurrentUser(array $ids): bool

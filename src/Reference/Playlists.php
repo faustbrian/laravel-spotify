@@ -14,7 +14,7 @@ final readonly class Playlists extends AbstractReference
 {
     public function findById(string $id, array $context = []): Playlist
     {
-        return Playlist::fromResponse($this->get("playlists/{$id}", $context));
+        return Playlist::from($this->get("playlists/{$id}", $context)->json());
     }
 
     public function updateDetails(string $id, array $context = []): bool

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class AudioAnalysisTatum extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class AudioAnalysisTatum extends Data
 {
     public function __construct(
         public float $start,

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class ResumePoint extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class ResumePoint extends Data
 {
     public function __construct(
         public readonly bool $fully_played,

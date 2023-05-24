@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
+use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
-final class Episode extends AbstractModel
+final class Episode extends Data
 {
     public function __construct(
         public readonly ?string $audio_preview_url,

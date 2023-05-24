@@ -15,7 +15,7 @@ final readonly class Tracks extends AbstractReference
 {
     public function findById(string $id, array $context = []): Track
     {
-        return Track::fromResponse($this->get("tracks/{$id}", $context));
+        return Track::from($this->get("tracks/{$id}", $context)->json());
     }
 
     /**
@@ -33,7 +33,7 @@ final readonly class Tracks extends AbstractReference
 
     public function savedByCurrentUser(array $context = []): TrackSavedByCurrentUserResponse
     {
-        return TrackSavedByCurrentUserResponse::fromResponse($this->get('me/tracks', $context));
+        return TrackSavedByCurrentUserResponse::from($this->get('me/tracks', $context)->json());
     }
 
     public function saveToCurrentUser(array $ids): bool
@@ -67,16 +67,16 @@ final readonly class Tracks extends AbstractReference
 
     public function audioFeature(string $id, array $context = []): AudioFeature
     {
-        return AudioFeature::fromResponse($this->get("audio-features/{$id}", $context));
+        return AudioFeature::from($this->get("audio-features/{$id}", $context)->json());
     }
 
     public function audioAnalysis(string $id, array $context = []): AudioAnalysis
     {
-        return AudioAnalysis::fromResponse($this->get("audio-analysis/{$id}", $context));
+        return AudioAnalysis::from($this->get("audio-analysis/{$id}", $context)->json());
     }
 
     public function recommendations(array $context = []): TrackRecommendationsResponse
     {
-        return TrackRecommendationsResponse::fromResponse($this->get('recommendations', $context));
+        return TrackRecommendationsResponse::from($this->get('recommendations', $context)->json());
     }
 }

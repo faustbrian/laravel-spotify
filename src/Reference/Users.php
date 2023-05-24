@@ -14,22 +14,22 @@ final readonly class Users extends AbstractReference
 {
     public function currentUserProfile(): CurrentUser
     {
-        return CurrentUser::fromResponse($this->get('me'));
+        return CurrentUser::from($this->get('me')->json());
     }
 
     public function topArtists(array $context = []): CurrentUserTopArtists
     {
-        return CurrentUserTopArtists::fromResponse($this->get('me/top/artists', $context));
+        return CurrentUserTopArtists::from($this->get('me/top/artists', $context)->json());
     }
 
     public function topTracks(array $context = []): CurrentUserTopTracks
     {
-        return CurrentUserTopTracks::fromResponse($this->get('me/top/tracks', $context));
+        return CurrentUserTopTracks::from($this->get('me/top/tracks', $context)->json());
     }
 
     public function profile(string $id): User
     {
-        return User::fromResponse($this->get("users/{$id}"));
+        return User::from($this->get("users/{$id}")->json());
     }
 
     public function followPlaylist(string $id, array $context = []): bool

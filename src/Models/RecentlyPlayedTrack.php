@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class RecentlyPlayedTrack extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class RecentlyPlayedTrack extends Data
 {
     public function __construct(
         public Track $track,

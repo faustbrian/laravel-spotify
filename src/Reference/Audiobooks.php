@@ -13,7 +13,7 @@ final readonly class Audiobooks extends AbstractReference
 {
     public function findById(string $id, array $context = []): Audiobook
     {
-        return Audiobook::fromResponse($this->get("audiobooks/{$id}", $context));
+        return Audiobook::from($this->get("audiobooks/{$id}", $context)->json());
     }
 
     /**
@@ -31,12 +31,12 @@ final readonly class Audiobooks extends AbstractReference
 
     public function chapters(string $id, array $context = []): AudiobookChaptersResponse
     {
-        return AudiobookChaptersResponse::fromResponse($this->get("audiobooks/{$id}/chapters", $context));
+        return AudiobookChaptersResponse::from($this->get("audiobooks/{$id}/chapters", $context)->json());
     }
 
     public function savedByCurrentUser(array $context = []): AudiobookSavedByUserResponse
     {
-        return AudiobookSavedByUserResponse::fromResponse($this->get('me/audiobooks', $context));
+        return AudiobookSavedByUserResponse::from($this->get('me/audiobooks', $context)->json());
     }
 
     public function saveToCurrentUser(array $ids): bool

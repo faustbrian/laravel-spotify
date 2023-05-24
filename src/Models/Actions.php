@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Models;
 
-final class Actions extends AbstractModel
+use Spatie\LaravelData\Data;
+
+final class Actions extends Data
 {
     public function __construct(
         public readonly bool $interrupting_playback,
