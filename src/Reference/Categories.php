@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use Illuminate\Http\Client\Response;
+use BombenProdukt\Spotify\Models;
 
 final readonly class Categories extends AbstractReference
 {
-    public function all(array $context = []): Response
+    public function all(array $context = []): Models\Categories
     {
-        return $this->get('browse/categories', $context);
+        return Models\Categories::from($this->get('browse/categories', $context)->json('categories'));
     }
 
-    public function findById(string $id, array $context = []): Response
+    public function findById(string $id, array $context = []): Models\Category
     {
-        return $this->get("/browse/categories/{$id}", $context);
+        return Models\Category::fromResponse($this->get("/browse/categories/{$id}", $context));
     }
 }

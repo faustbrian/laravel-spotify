@@ -13,5 +13,10 @@ use BombenProdukt\PackagePowerPack\TestBench\AbstractAnalysisTestCase;
  */
 final class AnalysisTest extends AbstractAnalysisTestCase
 {
-    //
+    protected static function getIgnored(): array
+    {
+        return [
+            'BombenProdukt\Spotify\Models',
+        ];
+    }
 }

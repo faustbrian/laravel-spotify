@@ -7,7 +7,7 @@ namespace BombenProdukt\Spotify\Models;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\DataCollection;
 
-final class SavedAlbumsResponse extends AbstractModel
+final class AlbumsSavedByCurrentUserResponse extends AbstractModel
 {
     public function __construct(
         public readonly string $href,

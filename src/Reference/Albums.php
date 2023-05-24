@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Reference;
 
 use BombenProdukt\Spotify\Models\Album;
+use BombenProdukt\Spotify\Models\AlbumsSavedByCurrentUserResponse;
 use BombenProdukt\Spotify\Models\NewReleasesResponse;
-use BombenProdukt\Spotify\Models\SavedAlbumsResponse;
 use BombenProdukt\Spotify\Models\Tracks;
 use Spatie\LaravelData\DataCollection;
 
@@ -35,9 +35,9 @@ final readonly class Albums extends AbstractReference
         return Tracks::fromResponse($this->get("albums/{$id}/tracks", $context));
     }
 
-    public function savedByCurrentUser(array $context = []): SavedAlbumsResponse
+    public function savedByCurrentUser(array $context = []): AlbumsSavedByCurrentUserResponse
     {
-        return SavedAlbumsResponse::fromResponse($this->get('me/albums', $context));
+        return AlbumsSavedByCurrentUserResponse::fromResponse($this->get('me/albums', $context));
     }
 
     public function saveToCurrentUser(array $ids): bool

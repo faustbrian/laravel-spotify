@@ -16,6 +16,11 @@ parameters:
 			path: src/Models/Album.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AlbumsSavedByCurrentUserResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/AlbumsSavedByCurrentUserResponse.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Artist\\:\\:__construct\\(\\) has parameter \\$images with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/Artist.php
@@ -104,11 +109,6 @@ parameters:
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\RecentlyPlayedTracks\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/RecentlyPlayedTracks.php
-
-		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\SavedAlbumsResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: src/Models/SavedAlbumsResponse.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Show\\:\\:__construct\\(\\) has parameter \\$copyrights with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
