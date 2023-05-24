@@ -9,9 +9,9 @@ use Spatie\LaravelData\Data;
 final class PlayerState extends Data
 {
     public function __construct(
-        public readonly Device $device,
-        public readonly string $repeat_state,
-        public readonly bool $shuffle_state,
+        public readonly ?Device $device,
+        public readonly ?string $repeat_state,
+        public readonly ?bool $shuffle_state,
         public readonly Context $context,
         public readonly int $timestamp,
         public readonly int $progress_ms,

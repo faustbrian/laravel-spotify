@@ -11,6 +11,7 @@ use Spatie\LaravelData\DataCollection;
 final class Track extends Data
 {
     public function __construct(
+        public readonly ?Album $album,
         #[DataCollectionOf(Artist::class)]
         public readonly DataCollection $artists,
         public readonly array $available_markets,
@@ -20,11 +21,11 @@ final class Track extends Data
         public readonly ExternalUrls $external_urls,
         public readonly string $href,
         public readonly string $id,
-        public readonly bool $is_playable,
-        public readonly LinkedFrom $linked_from,
-        public readonly Restrictions $restrictions,
+        public readonly ?bool $is_playable,
+        public readonly ?LinkedFrom $linked_from,
+        public readonly ?Restrictions $restrictions,
         public readonly string $name,
-        public readonly string $preview_url,
+        public readonly ?string $preview_url,
         public readonly int $track_number,
         public readonly string $type,
         public readonly string $uri,

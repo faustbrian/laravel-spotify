@@ -356,11 +356,6 @@ parameters:
 			path: src/Reference/Chapters.php
 
 		-
-			message: "#^Property BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\:\\:\\$client \\(Illuminate\\\\Http\\\\Client\\\\PendingRequest\\) does not accept BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\.$#"
-			count: 1
-			path: src/Reference/Client.php
-
-		-
 			message: "#^Property BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\:\\:\\$config is never read, only written\\.$#"
 			count: 1
 			path: src/Reference/Client.php
