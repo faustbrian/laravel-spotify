@@ -19,7 +19,8 @@
         "php": "^8.2",
         "bombenprodukt/laravel-manager": "^1.0",
         "bombenprodukt/laravel-package-powerpack": "^1.0",
-        "illuminate/contracts": "^10.0"
+        "illuminate/contracts": "^10.0",
+        "spatie/laravel-data": "^3.5"
     },
     "require-dev": {
         "bombenprodukt/php-cs-fixer-config": "^1.0",
