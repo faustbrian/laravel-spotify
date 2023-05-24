@@ -7,7 +7,7 @@ namespace BombenProdukt\Spotify\Models;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\DataCollection;
 
-final class AlbumsSavedByCurrentUserResponse extends AbstractModel
+final class AlbumSavedByCurrentUserResponse extends AbstractModel
 {
     public function __construct(
         public readonly string $href,
@@ -16,7 +16,7 @@ final class AlbumsSavedByCurrentUserResponse extends AbstractModel
         public readonly int $offset,
         public readonly ?string $previous,
         public readonly int $total,
-        #[DataCollectionOf(SavedAlbum::class)]
+        #[DataCollectionOf(AlbumSavedByCurrentUser::class)]
         public readonly DataCollection $items,
     ) {}
 }

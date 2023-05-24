@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Feature\Reference;
 
 use BombenProdukt\Spotify\Models\Album;
-use BombenProdukt\Spotify\Models\AlbumsSavedByCurrentUserResponse;
+use BombenProdukt\Spotify\Models\AlbumSavedByCurrentUserResponse;
 use BombenProdukt\Spotify\Models\NewReleasesResponse;
 use BombenProdukt\Spotify\Models\Tracks;
 use BombenProdukt\Spotify\Reference\Albums;
@@ -32,7 +32,7 @@ test('tracks', function (): void {
 test('savedByCurrentUser', function (): void {
     $actual = fakeSequence(Albums::class, 'albums/get-users-saved-albums')->savedByCurrentUser();
 
-    expect($actual)->toBeInstanceOf(AlbumsSavedByCurrentUserResponse::class);
+    expect($actual)->toBeInstanceOf(AlbumSavedByCurrentUserResponse::class);
 });
 
 test('newReleases', function (): void {

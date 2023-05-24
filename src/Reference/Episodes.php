@@ -4,26 +4,33 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use Illuminate\Http\Client\Response;
+use BombenProdukt\Spotify\Models\Episode;
+use BombenProdukt\Spotify\Models\EpisodeSavedByCurrentUserResponse;
+use Spatie\LaravelData\DataCollection;
 
 final readonly class Episodes extends AbstractReference
 {
-    public function findById(string $id, array $context = []): Response
+    public function findById(string $id, array $context = []): Episode
     {
-        return $this->get("episodes/{$id}", $context);
+        return Episode::fromResponse($this->get("episodes/{$id}", $context));
     }
 
-    public function findByIds(array $ids, array $context = []): Response
+    /**
+     * @return DataCollection<Episode>
+     */
+    public function findByIds(array $ids, array $context = []): DataCollection
     {
-        return $this->get('episodes', [
-            ...$context,
-            'ids' => $this->concat($ids),
-        ]);
+        return Episode::collection(
+            $this->get('episodes', [
+                ...$context,
+                'ids' => $this->concat($ids),
+            ])->json('episodes'),
+        );
     }
 
-    public function savedByCurrentUser(array $context = []): Response
+    public function savedByCurrentUser(array $context = []): EpisodeSavedByCurrentUserResponse
     {
-        return $this->get('me/episodes', $context);
+        return EpisodeSavedByCurrentUserResponse::fromResponse($this->get('me/episodes', $context));
     }
 
     public function saveToCurrentUser(array $ids): bool
