@@ -31,6 +31,31 @@ parameters:
 			path: src/Models/ArtistAlbumsResponse.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AudioAnalysis\\:\\:__construct\\(\\) has parameter \\$bars with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/AudioAnalysis.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AudioAnalysis\\:\\:__construct\\(\\) has parameter \\$beats with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/AudioAnalysis.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AudioAnalysis\\:\\:__construct\\(\\) has parameter \\$sections with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/AudioAnalysis.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AudioAnalysis\\:\\:__construct\\(\\) has parameter \\$segments with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/AudioAnalysis.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\AudioAnalysis\\:\\:__construct\\(\\) has parameter \\$tatums with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/AudioAnalysis.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Audiobook\\:\\:__construct\\(\\) has parameter \\$authors with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/Audiobook.php
@@ -86,6 +111,16 @@ parameters:
 			path: src/Models/CurrentUser.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\CurrentUserTopArtists\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/CurrentUserTopArtists.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\CurrentUserTopTracks\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/CurrentUserTopTracks.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\CurrentlyPlayingAndQueue\\:\\:__construct\\(\\) has parameter \\$queue with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/CurrentlyPlayingAndQueue.php
@@ -131,6 +166,21 @@ parameters:
 			path: src/Models/Track.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\TrackRecommendationsResponse\\:\\:__construct\\(\\) has parameter \\$seeds with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/TrackRecommendationsResponse.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\TrackRecommendationsResponse\\:\\:__construct\\(\\) has parameter \\$tracks with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/TrackRecommendationsResponse.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\TrackSavedByCurrentUserResponse\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/TrackSavedByCurrentUserResponse.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\Tracks\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/Tracks.php
@@ -139,6 +189,11 @@ parameters:
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\User\\:\\:__construct\\(\\) has parameter \\$images with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Models/User.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Models\\\\UserFollowedArtists\\:\\:__construct\\(\\) has parameter \\$items with generic class Spatie\\\\LaravelData\\\\DataCollection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Models/UserFollowedArtists.php
 
 		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Client\\:\\:delete\\(\\) invoked with 3 parameters, 1\\-2 required\\.$#"
@@ -266,6 +321,16 @@ parameters:
 			path: src/Reference/Episodes.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Genres\\:\\:seeds\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Genres.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Markets\\:\\:all\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Markets.php
+
+		-
 			message: "#^Anonymous function should return Illuminate\\\\Http\\\\Client\\\\Response but returns array\\<string, string\\>\\.$#"
 			count: 1
 			path: src/Reference/Playlists.php
@@ -276,9 +341,49 @@ parameters:
 			path: src/Reference/Shows.php
 
 		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:audioFeatures\\(\\) return type with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:audioFeatures\\(\\) should return iterable\\<BombenProdukt\\\\Spotify\\\\Models\\\\AudioFeature\\>&Spatie\\\\LaravelData\\\\DataCollection but returns Spatie\\\\LaravelData\\\\CursorPaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\AudioFeature\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\AudioFeature\\>\\|Spatie\\\\LaravelData\\\\PaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\AudioFeature\\>\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:checkSavedByCurrentUser\\(\\) should return array but returns mixed\\.$#"
 			count: 1
 			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:findByIds\\(\\) return type with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Tracks\\:\\:findByIds\\(\\) should return iterable\\<BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>&Spatie\\\\LaravelData\\\\DataCollection but returns Spatie\\\\LaravelData\\\\CursorPaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\|Spatie\\\\LaravelData\\\\PaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\.$#"
+			count: 1
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Parameter \\#1 \\$items of static method Spatie\\\\LaravelData\\\\Data\\:\\:collection\\(\\) expects array\\|Illuminate\\\\Contracts\\\\Pagination\\\\CursorPaginator\\|Illuminate\\\\Contracts\\\\Pagination\\\\Paginator\\|Illuminate\\\\Pagination\\\\AbstractCursorPaginator\\|Illuminate\\\\Pagination\\\\AbstractPaginator\\|Illuminate\\\\Support\\\\Enumerable\\<\\(int\\|string\\), mixed\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), mixed\\>, mixed given\\.$#"
+			count: 2
+			path: src/Reference/Tracks.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsArtist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsPlaylist\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Users\\:\\:checkFollowsUser\\(\\) should return array but returns mixed\\.$#"
+			count: 1
+			path: src/Reference/Users.php
 
 		-
 			message: "#^Cannot access offset 'config' on Illuminate\\\\Contracts\\\\Container\\\\Container\\.$#"
