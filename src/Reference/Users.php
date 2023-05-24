@@ -58,7 +58,7 @@ final readonly class Users extends AbstractReference
             ...$context,
             'type' => 'artist',
             'ids' => $this->concat($ids),
-        ])->status() === 200;
+        ])->status() === 204;
     }
 
     public function unfollowArtist(array $ids, array $context = []): bool
@@ -76,7 +76,7 @@ final readonly class Users extends AbstractReference
             ...$context,
             'type' => 'user',
             'ids' => $this->concat($ids),
-        ])->status() === 200;
+        ])->status() === 204;
     }
 
     public function unfollowUser(array $ids, array $context = []): bool

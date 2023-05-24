@@ -19,7 +19,9 @@ final readonly class Playlists extends AbstractReference
 
     public function updateDetails(string $id, array $context = []): bool
     {
-        return $this->put("playlists/{$id}", $context)->status() === 200;
+        return $this
+            ->put("playlists/{$id}", $context)
+            ->status() === 200;
     }
 
     public function allTracks(string $id, array $context = []): PlaylistTracksResponse
@@ -27,11 +29,11 @@ final readonly class Playlists extends AbstractReference
         return PlaylistTracksResponse::from($this->get("playlists/{$id}/tracks", $context)->json());
     }
 
-    public function updateTracks(string $id, array $uris): bool
+    public function updateTracks(string $id, array $uris): array
     {
         return $this->put("playlists/{$id}/tracks", [
             'uris' => $this->concat($uris),
-        ])->status() === 200;
+        ])->json();
     }
 
     public function addTracks(string $id, array $uris, array $context = []): bool
@@ -39,15 +41,15 @@ final readonly class Playlists extends AbstractReference
         return $this->post("playlists/{$id}/tracks", [
             ...$context,
             'uris' => $this->concat($uris),
-        ])->status() === 200;
+        ])->status() === 201;
     }
 
-    public function removeTracks(string $id, array $uris, array $context = []): bool
+    public function removeTracks(string $id, array $uris, array $context = []): array
     {
         return $this->delete("playlists/{$id}/tracks", [
             ...$context,
             'tracks' => collect($uris)->map(fn (string $uri): array => ['uri' => $uri])->toArray(),
-        ])->status() === 200;
+        ])->array();
     }
 
     public function allForCurrentUser(array $context = []): PlaylistsResponse

@@ -4,8 +4,15 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
+use Illuminate\Support\Traits\ForwardsCalls;
+
+/**
+ * @method static void withToken(string $token)
+ */
 abstract readonly class AbstractReference
 {
+    use ForwardsCalls;
+
     public function __construct(protected Client $client)
     {
         //
@@ -13,12 +20,7 @@ abstract readonly class AbstractReference
 
     public function __call(string $name, array $arguments): mixed
     {
-        return $this->client->{$name}(...$arguments);
-    }
-
-    public function withToken(string $token): void
-    {
-        $this->client->withToken($token);
+        return $this->forwardCallTo($this->client, $name, $arguments);
     }
 
     protected function concat(array $items): string
