@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.2.1] - 2023-05-24
+
 ## [1.2.0] - 2023-05-24
 ### Added
 - return typed DTOs for player
@@ -41,7 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-05-22
 
-[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.2.1...HEAD
+[1.2.1]: https://github.com/BombenProdukt/package_slug/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/BombenProdukt/package_slug/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/BombenProdukt/package_slug/compare/1.0.2...1.1.0
 [1.0.2]: https://github.com/BombenProdukt/package_slug/compare/1.0.1...1.0.2
