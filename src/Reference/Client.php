@@ -58,10 +58,9 @@ final class Client
         /**
          * @var Response
          */
-        $response = $this->client->{$method}(
-            \sprintf('%s?%s', $path, \http_build_query($query)),
-            $body
-        );
+        $response = $this->client
+            ->withOptions(['query' => $query])
+            ->{$method}($path, $body);
 
         if (\is_array($response->json('error'))) {
             throw new RuntimeException(
