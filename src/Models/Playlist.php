@@ -14,7 +14,7 @@ final class Playlist extends Data
 
     public ExternalUrls $external_urls;
 
-    public ?Follower $followers;
+    public ?Followers $followers;
 
     public string $href;
 
@@ -26,11 +26,11 @@ final class Playlist extends Data
 
     public PublicUser $owner;
 
-    public bool $public;
+    public ?bool $public;
 
-    public string $snapshot_id;
+    public ?string $snapshot_id;
 
-    public PlaylistTracks $tracks;
+    public ?PlaylistTracks $tracks;
 
     public string $type;
 

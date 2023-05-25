@@ -6,7 +6,7 @@ namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Data;
 
-final class Follower extends Data
+final class Followers extends Data
 {
     public ?string $href;
 

@@ -10,7 +10,7 @@ use Spatie\LaravelData\DataCollection;
 
 final class Chapter extends Data
 {
-    public string $audio_preview_url;
+    public ?string $audio_preview_url;
 
     public array $available_markets;
 

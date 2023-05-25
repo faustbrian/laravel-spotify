@@ -12,7 +12,7 @@ final class PrivateUser extends Data
 {
     public string $country;
 
-    public string $display_name;
+    public ?string $display_name;
 
     public string $email;
 
@@ -20,7 +20,7 @@ final class PrivateUser extends Data
 
     public ExternalUrls $external_urls;
 
-    public Follower $followers;
+    public Followers $followers;
 
     public string $href;
 

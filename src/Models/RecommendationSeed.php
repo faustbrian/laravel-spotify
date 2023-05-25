@@ -12,7 +12,7 @@ final class RecommendationSeed extends Data
 
     public int $afterRelinkingSize;
 
-    public string $href;
+    public ?string $href;
 
     public string $id;
 

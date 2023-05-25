@@ -8,9 +8,9 @@ use Spatie\LaravelData\Data;
 
 final class PlaylistTrack extends Data
 {
-    public string $added_at;
+    public ?string $added_at;
 
-    public PublicUser $added_by;
+    public ?PublicUser $added_by;
 
     public bool $is_local;
 

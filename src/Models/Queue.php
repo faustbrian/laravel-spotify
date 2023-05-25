@@ -10,7 +10,7 @@ use Spatie\LaravelData\DataCollection;
 
 final class Queue extends Data
 {
-    public Track $currently_playing;
+    public ?Track $currently_playing;
 
     #[DataCollectionOf(Track::class)]
     public DataCollection $queue;

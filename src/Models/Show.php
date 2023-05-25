@@ -30,7 +30,7 @@ final class Show extends Data
     #[DataCollectionOf(Image::class)]
     public DataCollection $images;
 
-    public bool $is_externally_hosted;
+    public ?bool $is_externally_hosted;
 
     public array $languages;
 

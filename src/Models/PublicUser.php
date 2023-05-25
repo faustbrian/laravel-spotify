@@ -14,7 +14,7 @@ final class PublicUser extends Data
 
     public ExternalUrls $external_urls;
 
-    public Follower $followers;
+    public ?Followers $followers;
 
     public string $href;
 

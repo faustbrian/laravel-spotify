@@ -29,7 +29,7 @@ final class Episode extends Data
     #[DataCollectionOf(Image::class)]
     public DataCollection $images;
 
-    public bool $is_externally_hosted;
+    public ?bool $is_externally_hosted;
 
     public bool $is_playable;
 
