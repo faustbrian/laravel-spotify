@@ -21,6 +21,7 @@
         "bombenprodukt/laravel-package-powerpack": "^1.0",
         "guzzlehttp/guzzle": "^7.7",
         "illuminate/contracts": "^10.0",
+        "laravel/socialite": "^5.6",
         "spatie/laravel-data": "^3.5"
     },
     "require-dev": {

@@ -14,6 +14,7 @@ abstract class TestCase extends AbstractPackageTestCase
     protected function getRequiredServiceProviders(): array
     {
         return [
+            \Laravel\Socialite\SocialiteServiceProvider::class,
             \Spatie\LaravelData\LaravelDataServiceProvider::class,
         ];
     }
