@@ -21,7 +21,7 @@ final readonly class Search extends AbstractReference
             $this->get('search', [
                 ...$context,
                 'type' => $this->concat($types),
-                'query' => $query,
+                'q' => $query,
             ])->json(),
         );
     }
@@ -32,7 +32,7 @@ final readonly class Search extends AbstractReference
             $this->get('search', [
                 ...$context,
                 'type' => 'album',
-                'query' => $query,
+                'q' => $query,
             ])->json('albums'),
         );
     }
@@ -43,7 +43,7 @@ final readonly class Search extends AbstractReference
             $this->get('search', [
                 ...$context,
                 'type' => 'artist',
-                'query' => $query,
+                'q' => $query,
             ])->json('artists'),
         );
     }
@@ -54,7 +54,7 @@ final readonly class Search extends AbstractReference
             $this->get('search', [
                 ...$context,
                 'type' => 'audiobook',
-                'query' => $query,
+                'q' => $query,
             ])->json('audiobooks'),
         );
     }
@@ -65,7 +65,7 @@ final readonly class Search extends AbstractReference
             $this->get('search', [
                 ...$context,
                 'type' => 'episode',
-                'query' => $query,
+                'q' => $query,
             ])->json('episodes'),
         );
     }
@@ -76,7 +76,7 @@ final readonly class Search extends AbstractReference
             $this->get('search', [
                 ...$context,
                 'type' => 'playlist',
-                'query' => $query,
+                'q' => $query,
             ])->json('playlists'),
         );
     }
@@ -87,7 +87,7 @@ final readonly class Search extends AbstractReference
             $this->get('search', [
                 ...$context,
                 'type' => 'show',
-                'query' => $query,
+                'q' => $query,
             ])->json('shows'),
         );
     }
@@ -98,7 +98,7 @@ final readonly class Search extends AbstractReference
             $this->get('search', [
                 ...$context,
                 'type' => 'track',
-                'query' => $query,
+                'q' => $query,
             ])->json('tracks'),
         );
     }
