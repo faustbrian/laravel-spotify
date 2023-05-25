@@ -13,31 +13,39 @@ use BombenProdukt\Spotify\Reference\Users;
 use Spatie\LaravelData\DataCollection;
 
 test('currentUserProfile', function (): void {
-    $actual = fakeSequence(Users::class, 'users/get-current-users-profile')->currentUserProfile();
+    $actual = fakeOkFromFixture(Users::class, 'users/get-current-users-profile')->currentUserProfile();
 
     expect($actual)->toBeInstanceOf(PrivateUser::class);
 });
 
 test('topArtists', function (): void {
-    $actual = fakeSequence(Users::class, 'users/get-users-top-artists')->topArtists();
+    $actual = fakeOkFromFixture(Users::class, 'users/get-users-top-artists')->topArtists();
 
     expect($actual)->toBeInstanceOf(ArtistPage::class);
 });
 
 test('topTracks', function (): void {
-    $actual = fakeSequence(Users::class, 'users/get-users-top-tracks')->topTracks();
+    $actual = fakeOkFromFixture(Users::class, 'users/get-users-top-tracks')->topTracks();
 
     expect($actual)->toBeInstanceOf(TrackPage::class);
 });
 
 test('profile', function (): void {
-    $actual = fakeSequence(Users::class, 'users/get-users-profile')->profile('');
+    $actual = fakeOkFromFixture(Users::class, 'users/get-users-profile')->profile('');
 
     expect($actual)->toBeInstanceOf(PublicUser::class);
 });
 
 test('followedArtists', function (): void {
-    $actual = fakeSequence(Users::class, 'users/get-followed')->followedArtists();
+    $actual = fakeOkFromFixture(Users::class, 'users/get-followed')->followedArtists();
+
+    expect($actual)->toBeInstanceOf(ArtistPage::class);
+    expect($actual->items)->toBeInstanceOf(DataCollection::class);
+    expect($actual->items->first())->toBeInstanceOf(Artist::class);
+});
+
+test('checkFollowsPlaylist', function (): void {
+    $actual = fakeOkFromFixture(Users::class, 'users/get-followed')->followedArtists();
 
     expect($actual)->toBeInstanceOf(ArtistPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);

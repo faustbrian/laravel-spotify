@@ -14,20 +14,20 @@ use BombenProdukt\Spotify\Reference\Tracks;
 use Spatie\LaravelData\DataCollection;
 
 test('findById', function (): void {
-    $actual = fakeSequence(Tracks::class, 'tracks/get-track')->findById('');
+    $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-track')->findById('');
 
     expect($actual)->toBeInstanceOf(Track::class);
 });
 
 test('findByIds', function (): void {
-    $actual = fakeSequence(Tracks::class, 'tracks/get-several-tracks')->findByIds([]);
+    $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-several-tracks')->findByIds([]);
 
     expect($actual)->toBeInstanceOf(DataCollection::class);
     expect($actual->first())->toBeInstanceOf(Track::class);
 });
 
 test('savedByCurrentUser', function (): void {
-    $actual = fakeSequence(Tracks::class, 'tracks/get-users-saved-tracks')->savedByCurrentUser();
+    $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-users-saved-tracks')->savedByCurrentUser();
 
     expect($actual)->toBeInstanceOf(SavedTrackPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
@@ -35,26 +35,26 @@ test('savedByCurrentUser', function (): void {
 });
 
 test('audioFeatures', function (): void {
-    $actual = fakeSequence(Tracks::class, 'tracks/get-several-audio-features')->audioFeatures();
+    $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-several-audio-features')->audioFeatures();
 
     expect($actual)->toBeInstanceOf(DataCollection::class);
     expect($actual->first())->toBeInstanceOf(AudioFeature::class);
 });
 
 test('audioFeature', function (): void {
-    $actual = fakeSequence(Tracks::class, 'tracks/get-audio-features')->audioFeature('');
+    $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-audio-features')->audioFeature('');
 
     expect($actual)->toBeInstanceOf(AudioFeature::class);
 });
 
 test('audioAnalysis', function (): void {
-    $actual = fakeSequence(Tracks::class, 'tracks/get-audio-analysis')->audioAnalysis('');
+    $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-audio-analysis')->audioAnalysis('');
 
     expect($actual)->toBeInstanceOf(AudioAnalysis::class);
 });
 
 test('recommendations', function (): void {
-    $actual = fakeSequence(Tracks::class, 'tracks/get-recommendations')->recommendations();
+    $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-recommendations')->recommendations();
 
     expect($actual)->toBeInstanceOf(Recommendations::class);
 });

@@ -56,9 +56,66 @@ function fixture(string $path): string
     return \file_get_contents(\realpath(__DIR__."/fixtures/{$path}.json"));
 }
 
-function fakeSequence(string $fqcn, string $path)
+function fakeOkFromFixture(string $fqcn, string $path)
 {
-    Http::fakeSequence()->push(fixture("reference/{$path}"));
+    Http::fakeSequence()->push(fixture("reference/{$path}"), 200);
+
+    return new $fqcn(new Client([]));
+}
+
+function fakeOk(string $fqcn, array $response)
+{
+    Http::fakeSequence()->push($response, 200);
+
+    return new $fqcn(new Client([]));
+}
+
+function fakeCreated(string $fqcn, array $response)
+{
+    Http::fakeSequence()->push($response, 201);
+
+    return new $fqcn(new Client([]));
+}
+
+function fakeNoContent(string $fqcn)
+{
+    Http::fakeSequence()->push(null, 204);
+
+    return new $fqcn(new Client([]));
+}
+
+function fakeUnauthorized(string $fqcn)
+{
+    Http::fakeSequence()->push([
+        'error' => [
+            'status' => 401,
+            'message' => 'string',
+        ],
+    ], 401);
+
+    return new $fqcn(new Client([]));
+}
+
+function fakeForbidden(string $fqcn)
+{
+    Http::fakeSequence()->push([
+        'error' => [
+            'status' => 403,
+            'message' => 'string',
+        ],
+    ], 403);
+
+    return new $fqcn(new Client([]));
+}
+
+function fakeTooManyRequests(string $fqcn)
+{
+    Http::fakeSequence()->push([
+        'error' => [
+            'status' => 429,
+            'message' => 'string',
+        ],
+    ], 429);
 
     return new $fqcn(new Client([]));
 }

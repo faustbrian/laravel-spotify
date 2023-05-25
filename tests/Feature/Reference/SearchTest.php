@@ -23,7 +23,7 @@ use BombenProdukt\Spotify\Reference\Search;
 use Spatie\LaravelData\DataCollection;
 
 test('search', function (): void {
-    $actual = fakeSequence(Search::class, 'search/search')->search([''], '');
+    $actual = fakeOkFromFixture(Search::class, 'search/search')->search([''], '');
 
     expect($actual)->toBeInstanceOf(SearchResult::class);
 
@@ -57,7 +57,7 @@ test('search', function (): void {
 });
 
 test('album', function (): void {
-    $actual = fakeSequence(Search::class, 'search/album')->album('');
+    $actual = fakeOkFromFixture(Search::class, 'search/album')->album('');
 
     expect($actual)->toBeInstanceOf(AlbumPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
@@ -65,7 +65,7 @@ test('album', function (): void {
 });
 
 test('artist', function (): void {
-    $actual = fakeSequence(Search::class, 'search/artist')->artist('');
+    $actual = fakeOkFromFixture(Search::class, 'search/artist')->artist('');
 
     expect($actual)->toBeInstanceOf(ArtistPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
@@ -73,7 +73,7 @@ test('artist', function (): void {
 });
 
 test('audiobook', function (): void {
-    $actual = fakeSequence(Search::class, 'search/audiobook')->audiobook('');
+    $actual = fakeOkFromFixture(Search::class, 'search/audiobook')->audiobook('');
 
     expect($actual)->toBeInstanceOf(AudiobookPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
@@ -81,7 +81,7 @@ test('audiobook', function (): void {
 });
 
 test('episode', function (): void {
-    $actual = fakeSequence(Search::class, 'search/episode')->episode('');
+    $actual = fakeOkFromFixture(Search::class, 'search/episode')->episode('');
 
     expect($actual)->toBeInstanceOf(EpisodePage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
@@ -89,7 +89,7 @@ test('episode', function (): void {
 });
 
 test('playlist', function (): void {
-    $actual = fakeSequence(Search::class, 'search/playlist')->playlist('');
+    $actual = fakeOkFromFixture(Search::class, 'search/playlist')->playlist('');
 
     expect($actual)->toBeInstanceOf(PlaylistPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
@@ -97,7 +97,7 @@ test('playlist', function (): void {
 });
 
 test('show', function (): void {
-    $actual = fakeSequence(Search::class, 'search/show')->show('');
+    $actual = fakeOkFromFixture(Search::class, 'search/show')->show('');
 
     expect($actual)->toBeInstanceOf(ShowPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
@@ -105,7 +105,7 @@ test('show', function (): void {
 });
 
 test('track', function (): void {
-    $actual = fakeSequence(Search::class, 'search/track')->track('');
+    $actual = fakeOkFromFixture(Search::class, 'search/track')->track('');
 
     expect($actual)->toBeInstanceOf(TrackPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);

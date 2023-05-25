@@ -10,7 +10,7 @@ use BombenProdukt\Spotify\Reference\Categories;
 use Spatie\LaravelData\DataCollection;
 
 test('all', function (): void {
-    $actual = fakeSequence(Categories::class, 'categories/get-categories')->all();
+    $actual = fakeOkFromFixture(Categories::class, 'categories/get-categories')->all();
 
     expect($actual)->toBeInstanceOf(CategoryPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
@@ -18,7 +18,7 @@ test('all', function (): void {
 });
 
 test('findById', function (): void {
-    $actual = fakeSequence(Categories::class, 'categories/get-a-category')->findById('');
+    $actual = fakeOkFromFixture(Categories::class, 'categories/get-a-category')->findById('');
 
     expect($actual)->toBeInstanceOf(Category::class);
 });

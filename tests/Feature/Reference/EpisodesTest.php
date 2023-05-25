@@ -11,20 +11,20 @@ use BombenProdukt\Spotify\Reference\Episodes;
 use Spatie\LaravelData\DataCollection;
 
 test('findById', function (): void {
-    $actual = fakeSequence(Episodes::class, 'episodes/get-an-episode')->findById('');
+    $actual = fakeOkFromFixture(Episodes::class, 'episodes/get-an-episode')->findById('');
 
     expect($actual)->toBeInstanceOf(Episode::class);
 });
 
 test('findByIds', function (): void {
-    $actual = fakeSequence(Episodes::class, 'episodes/get-multiple-episodes')->findByIds([]);
+    $actual = fakeOkFromFixture(Episodes::class, 'episodes/get-multiple-episodes')->findByIds([]);
 
     expect($actual)->toBeInstanceOf(DataCollection::class);
     expect($actual->first())->toBeInstanceOf(Episode::class);
 });
 
 test('savedByCurrentUser', function (): void {
-    $actual = fakeSequence(Episodes::class, 'episodes/get-users-saved-episodes')->savedByCurrentUser();
+    $actual = fakeOkFromFixture(Episodes::class, 'episodes/get-users-saved-episodes')->savedByCurrentUser();
 
     expect($actual)->toBeInstanceOf(SavedEpisodePage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
