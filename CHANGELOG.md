@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.5.0] - 2023-05-25
+### Added
+- implement Laravel Socialite provider for authentication
+
+
 ## [1.4.2] - 2023-05-25
 ### Fixed
 - replace unused `Tracks` model with `TrackPage`
@@ -71,7 +76,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-05-22
 
-[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.4.2...HEAD
+[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.5.0...HEAD
+[1.5.0]: https://github.com/BombenProdukt/package_slug/compare/1.4.2...1.5.0
 [1.4.2]: https://github.com/BombenProdukt/package_slug/compare/1.4.1...1.4.2
 [1.4.1]: https://github.com/BombenProdukt/package_slug/compare/1.4.0...1.4.1
 [1.4.0]: https://github.com/BombenProdukt/package_slug/compare/1.3.0...1.4.0
