@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.4.0] - 2023-05-25
+
 ## [1.3.0] - 2023-05-24
 ### Fixed
 - throw `RuntimeException` when response contains `error` object
@@ -59,7 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-05-22
 
-[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.3.0...HEAD
+[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.4.0...HEAD
+[1.4.0]: https://github.com/BombenProdukt/package_slug/compare/1.3.0...1.4.0
 [1.3.0]: https://github.com/BombenProdukt/package_slug/compare/1.2.3...1.3.0
 [1.2.3]: https://github.com/BombenProdukt/package_slug/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/BombenProdukt/package_slug/compare/1.2.1...1.2.2
