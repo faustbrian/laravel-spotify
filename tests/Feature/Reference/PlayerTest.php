@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Reference;
 
+use BombenProdukt\Spotify\Models\CurrentlyPlaying;
 use BombenProdukt\Spotify\Models\Device;
 use BombenProdukt\Spotify\Models\PlayerState;
 use BombenProdukt\Spotify\Models\Queue;
@@ -27,7 +28,7 @@ test('devices', function (): void {
 test('currentlyPlaying', function (): void {
     $actual = fakeSequence(Player::class, 'player/get-the-users-currently-playing-track')->currentlyPlaying();
 
-    expect($actual)->toBeInstanceOf(PlayerState::class);
+    expect($actual)->toBeInstanceOf(CurrentlyPlaying::class);
 });
 
 test('recentlyPlayed', function (): void {

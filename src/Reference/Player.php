@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
+use BombenProdukt\Spotify\Models\CurrentlyPlaying;
 use BombenProdukt\Spotify\Models\Device;
 use BombenProdukt\Spotify\Models\PlayerState;
 use BombenProdukt\Spotify\Models\Queue;
@@ -38,7 +39,7 @@ final readonly class Player extends AbstractReference
         return Device::collection($this->get('me/player/devices')->json('devices'));
     }
 
-    public function currentlyPlaying(array $context = []): ?PlayerState
+    public function currentlyPlaying(array $context = []): ?CurrentlyPlaying
     {
         $response = $this->get('me/player/currently-playing', $context)->json();
 
@@ -46,7 +47,7 @@ final readonly class Player extends AbstractReference
             return null;
         }
 
-        return PlayerState::from($response);
+        return CurrentlyPlaying::from($response);
     }
 
     public function play(string $deviceId, array $context = []): bool
