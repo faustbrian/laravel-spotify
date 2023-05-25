@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.6.0] - 2023-05-25
+### Changed
+- combine keys and values for check methods
+
+
 ## [1.5.4] - 2023-05-25
 ### Fixed
 - use `q` instead of `query` for `search`
@@ -92,7 +97,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-05-22
 
-[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.5.4...HEAD
+[Unreleased]: https://github.com/BombenProdukt/package_slug/compare/1.6.0...HEAD
+[1.6.0]: https://github.com/BombenProdukt/package_slug/compare/1.5.4...1.6.0
 [1.5.4]: https://github.com/BombenProdukt/package_slug/compare/1.5.2...1.5.4
 [1.5.2]: https://github.com/BombenProdukt/package_slug/compare/1.5.1...1.5.2
 [1.5.1]: https://github.com/BombenProdukt/package_slug/compare/1.5.0...1.5.1
