@@ -1,4 +1,4 @@
-name: "Integrate"
+name: Integrate
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore: resolve style guide violations"
+          commit_message: 'chore: resolve style guide violations'
   security-analysis:
     runs-on: ubuntu-latest
     steps:

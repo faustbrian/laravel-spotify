@@ -1,11 +1,11 @@
-name: "Release"
+name: Release
 
 on:
-  release:
-    types: [released]
+  push:
+    branches: [main]
 
 jobs:
-  generate-changelog:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Clone
@@ -14,15 +14,13 @@ jobs:
           fetch-depth: 0
           ref: main
 
-      - name: Install
-        run: wget -c https://github.com/git-chglog/git-chglog/releases/download/v0.15.4/git-chglog_0.15.4_linux_amd64.tar.gz -O - | tar -xz
-
-      - name: Execute
-        run: ./git-chglog -o CHANGELOG.md
-
-      - name: Commit
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Setup Node.js 19
+        uses: actions/setup-node@v3
         with:
-          branch: main
-          commit_message: "chore: update changelog"
-          file_pattern: CHANGELOG.md
+          node-version: latest
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Create Release Pull Request
+        uses: changesets/action@v1

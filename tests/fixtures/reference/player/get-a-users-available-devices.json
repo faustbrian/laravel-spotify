@@ -1,13 +1,13 @@
 {
-  "devices": [
-    {
-      "id": "string",
-      "is_active": false,
-      "is_private_session": false,
-      "is_restricted": false,
-      "name": "Kitchen speaker",
-      "type": "computer",
-      "volume_percent": 59
-    }
-  ]
+	"devices": [
+		{
+			"id": "string",
+			"is_active": false,
+			"is_private_session": false,
+			"is_restricted": false,
+			"name": "Kitchen speaker",
+			"type": "computer",
+			"volume_percent": 59
+		}
+	]
 }

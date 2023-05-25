@@ -1,0 +1,16 @@
+{
+	"fmt": {
+		"useTabs": true,
+		"lineWidth": 120,
+		"indentWidth": 4,
+		"singleQuote": true,
+		"proseWrap": "preserve",
+		"include": ["./"],
+		"exclude": [
+			".github/CODE_OF_CONDUCT.md",
+			".github/CONTRIBUTING.md",
+			"CHANGELOG.md",
+			"vendor/"
+		]
+	}
+}
