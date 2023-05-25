@@ -49,8 +49,11 @@ final readonly class Episodes extends AbstractReference
 
     public function checkSavedByCurrentUser(array $ids): array
     {
-        return $this->get('me/episodes/contains', [
-            'ids' => $this->concat($ids),
-        ])->json();
+        return $this->combine(
+            $ids,
+            $this->get('me/episodes/contains', [
+                'ids' => $this->concat($ids),
+            ])->json(),
+        );
     }
 }

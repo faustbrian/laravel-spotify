@@ -43,7 +43,12 @@ test('followedArtists', function (): void {
 });
 
 test('checkFollowsPlaylist', function (): void {
-    $actual = fakeOkFromFixture(Users::class, 'users/get-followed')->followedArtists();
+    $actual = fakeOk(Users::class, [false, true, false])
+        ->checkFollowsPlaylist('3cEYpjA9oz9GiPac4AsH4n', ['jmperezperez', 'thelinmichael', 'wizzler']);
 
-    expect($actual)->toBePage(ArtistPage::class, Artist::class);
+    expect($actual)->toBe([
+        'jmperezperez' => false,
+        'thelinmichael' => true,
+        'wizzler' => false,
+    ]);
 });

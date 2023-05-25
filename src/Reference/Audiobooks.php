@@ -55,8 +55,11 @@ final readonly class Audiobooks extends AbstractReference
 
     public function checkSavedByCurrentUser(array $ids): array
     {
-        return $this->get('me/audiobooks/contains', [
-            'ids' => $this->concat($ids),
-        ])->json();
+        return $this->combine(
+            $ids,
+            $this->get('me/audiobooks/contains', [
+                'ids' => $this->concat($ids),
+            ])->json(),
+        );
     }
 }

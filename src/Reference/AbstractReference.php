@@ -27,4 +27,9 @@ abstract readonly class AbstractReference
     {
         return \implode(',', $items);
     }
+
+    protected function combine(array $keys, array $values): array
+    {
+        return \array_combine($keys, $values);
+    }
 }

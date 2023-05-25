@@ -56,9 +56,12 @@ final readonly class Albums extends AbstractReference
 
     public function checkSavedByCurrentUser(array $ids): array
     {
-        return $this->get('me/albums/contains', [
-            'ids' => $this->concat($ids),
-        ])->json();
+        return $this->combine(
+            $ids,
+            $this->get('me/albums/contains', [
+                'ids' => $this->concat($ids),
+            ])->json(),
+        );
     }
 
     public function newReleases(array $context = []): AlbumPage

@@ -105,10 +105,13 @@ final readonly class Users extends AbstractReference
 
     public function checkFollowsPlaylist(string $playlistId, array $userIds, array $context = []): array
     {
-        return $this->get("playlists/{$playlistId}/followers/contains", [
-            ...$context,
-            'type' => 'user',
-            'ids' => \implode(',', $userIds),
-        ])->json();
+        return $this->combine(
+            $userIds,
+            $this->get("playlists/{$playlistId}/followers/contains", [
+                ...$context,
+                'type' => 'user',
+                'ids' => \implode(',', $userIds),
+            ])->json(),
+        );
     }
 }
