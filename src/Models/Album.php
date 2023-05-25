@@ -51,5 +51,5 @@ final class Album extends Data
     #[DataCollectionOf(Artist::class)]
     public DataCollection $artists;
 
-    public ?Tracks $tracks;
+    public ?TrackPage $tracks;
 }

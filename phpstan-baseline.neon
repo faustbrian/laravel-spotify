@@ -206,11 +206,6 @@ parameters:
 			path: src/Models/TrackPage.php
 
 		-
-			message: "#^Property BombenProdukt\\\\Spotify\\\\Models\\\\Tracks\\:\\:\\$items with generic class Spatie\\\\LaravelData\\\\DataCollection does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: src/Models/Tracks.php
-
-		-
 			message: "#^Call to an undefined method BombenProdukt\\\\Spotify\\\\Reference\\\\Albums\\:\\:delete\\(\\)\\.$#"
 			count: 1
 			path: src/Reference/Albums.php
@@ -261,7 +256,7 @@ parameters:
 			path: src/Reference/Artists.php
 
 		-
-			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:topTracks\\(\\) should return iterable\\<BombenProdukt\\\\Spotify\\\\Models\\\\Tracks\\>&Spatie\\\\LaravelData\\\\DataCollection but returns Spatie\\\\LaravelData\\\\CursorPaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\|Spatie\\\\LaravelData\\\\PaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\.$#"
+			message: "#^Method BombenProdukt\\\\Spotify\\\\Reference\\\\Artists\\:\\:topTracks\\(\\) should return iterable\\<BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>&Spatie\\\\LaravelData\\\\DataCollection but returns Spatie\\\\LaravelData\\\\CursorPaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\|Spatie\\\\LaravelData\\\\DataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\|Spatie\\\\LaravelData\\\\PaginatedDataCollection\\<\\(int\\|string\\), BombenProdukt\\\\Spotify\\\\Models\\\\Track\\>\\.$#"
 			count: 1
 			path: src/Reference/Artists.php
 

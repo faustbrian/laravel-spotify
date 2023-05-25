@@ -7,7 +7,7 @@ namespace BombenProdukt\Spotify\Reference;
 use BombenProdukt\Spotify\Models\Album;
 use BombenProdukt\Spotify\Models\AlbumPage;
 use BombenProdukt\Spotify\Models\SavedAlbumPage;
-use BombenProdukt\Spotify\Models\Tracks;
+use BombenProdukt\Spotify\Models\TrackPage;
 use Spatie\LaravelData\DataCollection;
 
 final readonly class Albums extends AbstractReference
@@ -30,9 +30,9 @@ final readonly class Albums extends AbstractReference
         );
     }
 
-    public function tracks(string $id, array $context = []): Tracks
+    public function tracks(string $id, array $context = []): TrackPage
     {
-        return Tracks::from($this->get("albums/{$id}/tracks", $context)->json());
+        return TrackPage::from($this->get("albums/{$id}/tracks", $context)->json());
     }
 
     public function savedByCurrentUser(array $context = []): SavedAlbumPage

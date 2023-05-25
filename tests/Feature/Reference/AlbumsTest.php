@@ -7,7 +7,7 @@ namespace Tests\Feature\Reference;
 use BombenProdukt\Spotify\Models\Album;
 use BombenProdukt\Spotify\Models\AlbumPage;
 use BombenProdukt\Spotify\Models\SavedAlbumPage;
-use BombenProdukt\Spotify\Models\Tracks;
+use BombenProdukt\Spotify\Models\TrackPage;
 use BombenProdukt\Spotify\Reference\Albums;
 use Spatie\LaravelData\DataCollection;
 
@@ -26,7 +26,7 @@ test('findByIds', function (): void {
 test('tracks', function (): void {
     $actual = fakeSequence(Albums::class, 'albums/get-an-albums-tracks')->tracks('');
 
-    expect($actual)->toBeInstanceOf(Tracks::class);
+    expect($actual)->toBeInstanceOf(TrackPage::class);
 });
 
 test('savedByCurrentUser', function (): void {

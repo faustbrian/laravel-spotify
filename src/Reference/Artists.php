@@ -7,7 +7,6 @@ namespace BombenProdukt\Spotify\Reference;
 use BombenProdukt\Spotify\Models\AlbumPage;
 use BombenProdukt\Spotify\Models\Artist;
 use BombenProdukt\Spotify\Models\Track;
-use BombenProdukt\Spotify\Models\Tracks;
 use Spatie\LaravelData\DataCollection;
 
 final readonly class Artists extends AbstractReference
@@ -35,7 +34,7 @@ final readonly class Artists extends AbstractReference
     }
 
     /**
-     * @return DataCollection<Tracks>
+     * @return DataCollection<Track>
      */
     public function topTracks(string $id, array $context = []): DataCollection
     {
