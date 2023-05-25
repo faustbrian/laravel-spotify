@@ -14,15 +14,15 @@ final class PlayerState extends Data
 
     public bool $shuffle_state;
 
-    public Context $context;
+    public ?Context $context;
 
     public int $timestamp;
 
-    public int $progress_ms;
+    public ?int $progress_ms;
 
     public bool $is_playing;
 
-    public Track $item;
+    public ?Track $item;
 
     public string $currently_playing_type;
 
