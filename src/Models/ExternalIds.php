@@ -8,9 +8,9 @@ use Spatie\LaravelData\Data;
 
 final class ExternalIds extends Data
 {
-    public function __construct(
-        public readonly string $isrc,
-        public readonly string $ean,
-        public readonly string $upc,
-    ) {}
+    public string $isrc;
+
+    public string $ean;
+
+    public string $upc;
 }

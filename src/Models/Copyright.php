@@ -8,8 +8,7 @@ use Spatie\LaravelData\Data;
 
 final class Copyright extends Data
 {
-    public function __construct(
-        public readonly string $text,
-        public readonly string $type,
-    ) {}
+    public string $text;
+
+    public string $type;
 }

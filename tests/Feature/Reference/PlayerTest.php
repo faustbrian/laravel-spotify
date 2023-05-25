@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Feature\Reference;
 
 use BombenProdukt\Spotify\Models\Device;
-use BombenProdukt\Spotify\Models\PlayerQueueResponse;
 use BombenProdukt\Spotify\Models\PlayerState;
-use BombenProdukt\Spotify\Models\RecentlyPlayedResponse;
+use BombenProdukt\Spotify\Models\Queue;
+use BombenProdukt\Spotify\Models\RecentlyPlayedTrackPage;
 use BombenProdukt\Spotify\Reference\Player;
 use Spatie\LaravelData\DataCollection;
 
@@ -33,11 +33,11 @@ test('currentlyPlaying', function (): void {
 test('recentlyPlayed', function (): void {
     $actual = fakeSequence(Player::class, 'player/get-recently-played')->recentlyPlayed();
 
-    expect($actual)->toBeInstanceOf(RecentlyPlayedResponse::class);
+    expect($actual)->toBeInstanceOf(RecentlyPlayedTrackPage::class);
 });
 
 test('queue', function (): void {
     $actual = fakeSequence(Player::class, 'player/get-queue')->queue();
 
-    expect($actual)->toBeInstanceOf(PlayerQueueResponse::class);
+    expect($actual)->toBeInstanceOf(Queue::class);
 });

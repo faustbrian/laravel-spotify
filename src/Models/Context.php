@@ -8,10 +8,11 @@ use Spatie\LaravelData\Data;
 
 final class Context extends Data
 {
-    public function __construct(
-        public readonly string $type,
-        public readonly string $href,
-        public readonly ExternalUrls $external_urls,
-        public readonly string $uri,
-    ) {}
+    public string $type;
+
+    public string $href;
+
+    public ExternalUrls $external_urls;
+
+    public string $uri;
 }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Reference;
 
+use BombenProdukt\Spotify\Models\AlbumPage;
 use BombenProdukt\Spotify\Models\Artist;
-use BombenProdukt\Spotify\Models\ArtistAlbumsResponse;
 use BombenProdukt\Spotify\Models\Track;
 use BombenProdukt\Spotify\Reference\Artists;
 use Spatie\LaravelData\DataCollection;
@@ -26,7 +26,7 @@ test('findByIds', function (): void {
 test('albums', function (): void {
     $actual = fakeSequence(Artists::class, 'artists/get-an-artists-albums')->albums('');
 
-    expect($actual)->toBeInstanceOf(ArtistAlbumsResponse::class);
+    expect($actual)->toBeInstanceOf(AlbumPage::class);
 });
 
 test('topTracks', function (): void {

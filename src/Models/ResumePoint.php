@@ -8,8 +8,7 @@ use Spatie\LaravelData\Data;
 
 final class ResumePoint extends Data
 {
-    public function __construct(
-        public readonly bool $fully_played,
-        public readonly int $resume_position_ms,
-    ) {}
+    public bool $fully_played;
+
+    public int $resume_position_ms;
 }

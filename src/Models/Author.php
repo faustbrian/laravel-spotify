@@ -8,7 +8,5 @@ use Spatie\LaravelData\Data;
 
 final class Author extends Data
 {
-    public function __construct(
-        public readonly string $name,
-    ) {}
+    public string $name;
 }

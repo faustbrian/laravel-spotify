@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Reference;
 
 use BombenProdukt\Spotify\Models\Audiobook;
-use BombenProdukt\Spotify\Models\AudiobookChaptersResponse;
-use BombenProdukt\Spotify\Models\AudiobookSavedByUserResponse;
+use BombenProdukt\Spotify\Models\ChapterPage;
+use BombenProdukt\Spotify\Models\SavedAudiobookPage;
 use Spatie\LaravelData\DataCollection;
 
 final readonly class Audiobooks extends AbstractReference
@@ -29,14 +29,14 @@ final readonly class Audiobooks extends AbstractReference
         );
     }
 
-    public function chapters(string $id, array $context = []): AudiobookChaptersResponse
+    public function chapters(string $id, array $context = []): ChapterPage
     {
-        return AudiobookChaptersResponse::from($this->get("audiobooks/{$id}/chapters", $context)->json());
+        return ChapterPage::from($this->get("audiobooks/{$id}/chapters", $context)->json());
     }
 
-    public function savedByCurrentUser(array $context = []): AudiobookSavedByUserResponse
+    public function savedByCurrentUser(array $context = []): SavedAudiobookPage
     {
-        return AudiobookSavedByUserResponse::from($this->get('me/audiobooks', $context)->json());
+        return SavedAudiobookPage::from($this->get('me/audiobooks', $context)->json());
     }
 
     public function saveToCurrentUser(array $ids): bool

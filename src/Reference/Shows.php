@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
+use BombenProdukt\Spotify\Models\EpisodePage;
+use BombenProdukt\Spotify\Models\SavedShowPage;
 use BombenProdukt\Spotify\Models\Show;
-use BombenProdukt\Spotify\Models\ShowEpisodesResponse;
-use BombenProdukt\Spotify\Models\ShowSavedByCurrentUserResponse;
 use Spatie\LaravelData\DataCollection;
 
 final readonly class Shows extends AbstractReference
@@ -29,14 +29,14 @@ final readonly class Shows extends AbstractReference
         );
     }
 
-    public function episodes(array $context = []): ShowEpisodesResponse
+    public function episodes(array $context = []): EpisodePage
     {
-        return ShowEpisodesResponse::from($this->get('shows', $context)->json());
+        return EpisodePage::from($this->get('shows', $context)->json());
     }
 
-    public function savedByCurrentUser(array $context = []): ShowSavedByCurrentUserResponse
+    public function savedByCurrentUser(array $context = []): SavedShowPage
     {
-        return ShowSavedByCurrentUserResponse::from($this->get('me/shows', $context)->json());
+        return SavedShowPage::from($this->get('me/shows', $context)->json());
     }
 
     public function saveToCurrentUser(array $ids): bool

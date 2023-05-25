@@ -6,10 +6,10 @@ namespace Tests\Feature\Reference;
 
 use BombenProdukt\Spotify\Models\AudioAnalysis;
 use BombenProdukt\Spotify\Models\AudioFeature;
+use BombenProdukt\Spotify\Models\Recommendations;
+use BombenProdukt\Spotify\Models\SavedTrack;
+use BombenProdukt\Spotify\Models\SavedTrackPage;
 use BombenProdukt\Spotify\Models\Track;
-use BombenProdukt\Spotify\Models\TrackRecommendationsResponse;
-use BombenProdukt\Spotify\Models\TrackSavedByCurrentUser;
-use BombenProdukt\Spotify\Models\TrackSavedByCurrentUserResponse;
 use BombenProdukt\Spotify\Reference\Tracks;
 use Spatie\LaravelData\DataCollection;
 
@@ -29,9 +29,9 @@ test('findByIds', function (): void {
 test('savedByCurrentUser', function (): void {
     $actual = fakeSequence(Tracks::class, 'tracks/get-users-saved-tracks')->savedByCurrentUser();
 
-    expect($actual)->toBeInstanceOf(TrackSavedByCurrentUserResponse::class);
+    expect($actual)->toBeInstanceOf(SavedTrackPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(TrackSavedByCurrentUser::class);
+    expect($actual->items->first())->toBeInstanceOf(SavedTrack::class);
 });
 
 test('audioFeatures', function (): void {
@@ -56,5 +56,5 @@ test('audioAnalysis', function (): void {
 test('recommendations', function (): void {
     $actual = fakeSequence(Tracks::class, 'tracks/get-recommendations')->recommendations();
 
-    expect($actual)->toBeInstanceOf(TrackRecommendationsResponse::class);
+    expect($actual)->toBeInstanceOf(Recommendations::class);
 });

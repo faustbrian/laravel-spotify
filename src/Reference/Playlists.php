@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
+use BombenProdukt\Spotify\Models\Image;
 use BombenProdukt\Spotify\Models\Playlist;
-use BombenProdukt\Spotify\Models\PlaylistCoverImage;
-use BombenProdukt\Spotify\Models\PlaylistsResponse;
-use BombenProdukt\Spotify\Models\PlaylistTracksResponse;
+use BombenProdukt\Spotify\Models\PlaylistPage;
+use BombenProdukt\Spotify\Models\PlaylistTrackPage;
 use Spatie\LaravelData\DataCollection;
 
 final readonly class Playlists extends AbstractReference
@@ -24,9 +24,9 @@ final readonly class Playlists extends AbstractReference
             ->status() === 200;
     }
 
-    public function allTracks(string $id, array $context = []): PlaylistTracksResponse
+    public function allTracks(string $id, array $context = []): PlaylistTrackPage
     {
-        return PlaylistTracksResponse::from($this->get("playlists/{$id}/tracks", $context)->json());
+        return PlaylistTrackPage::from($this->get("playlists/{$id}/tracks", $context)->json());
     }
 
     public function updateTracks(string $id, array $uris): array
@@ -52,14 +52,14 @@ final readonly class Playlists extends AbstractReference
         ])->array();
     }
 
-    public function allForCurrentUser(array $context = []): PlaylistsResponse
+    public function allForCurrentUser(array $context = []): PlaylistPage
     {
-        return PlaylistsResponse::from($this->get('me/playlists', $context)->json());
+        return PlaylistPage::from($this->get('me/playlists', $context)->json());
     }
 
-    public function allForUser(string $userId, array $context = []): PlaylistsResponse
+    public function allForUser(string $userId, array $context = []): PlaylistPage
     {
-        return PlaylistsResponse::from($this->get("users/{$userId}/playlists", $context)->json());
+        return PlaylistPage::from($this->get("users/{$userId}/playlists", $context)->json());
     }
 
     public function create(string $userId, array $context = []): bool
@@ -69,22 +69,22 @@ final readonly class Playlists extends AbstractReference
             ->status() === 201;
     }
 
-    public function featured(array $context = []): PlaylistsResponse
+    public function featured(array $context = []): PlaylistPage
     {
-        return PlaylistsResponse::from($this->get('browse/featured-playlists', $context)->json('playlists'));
+        return PlaylistPage::from($this->get('browse/featured-playlists', $context)->json('playlists'));
     }
 
-    public function allByCategory(string $categoryId, array $context = []): PlaylistsResponse
+    public function allByCategory(string $categoryId, array $context = []): PlaylistPage
     {
-        return PlaylistsResponse::from($this->get("browse/categories/{$categoryId}/playlists", $context)->json('playlists'));
+        return PlaylistPage::from($this->get("browse/categories/{$categoryId}/playlists", $context)->json('playlists'));
     }
 
     /**
-     * @return DataCollection<PlaylistCoverImage>
+     * @return DataCollection<Image>
      */
     public function coverImage(string $playlistId, array $context = []): DataCollection
     {
-        return PlaylistCoverImage::collection($this->get("playlists/{$playlistId}/images", $context)->json());
+        return Image::collection($this->get("playlists/{$playlistId}/images", $context)->json());
     }
 
     public function updateCoverImage(string $playlistId, array $context = []): bool

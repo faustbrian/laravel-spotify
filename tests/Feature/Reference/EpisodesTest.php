@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Feature\Reference;
 
 use BombenProdukt\Spotify\Models\Episode;
-use BombenProdukt\Spotify\Models\EpisodeSavedByCurrentUser;
-use BombenProdukt\Spotify\Models\EpisodeSavedByCurrentUserResponse;
+use BombenProdukt\Spotify\Models\SavedEpisode;
+use BombenProdukt\Spotify\Models\SavedEpisodePage;
 use BombenProdukt\Spotify\Reference\Episodes;
 use Spatie\LaravelData\DataCollection;
 
@@ -26,7 +26,7 @@ test('findByIds', function (): void {
 test('savedByCurrentUser', function (): void {
     $actual = fakeSequence(Episodes::class, 'episodes/get-users-saved-episodes')->savedByCurrentUser();
 
-    expect($actual)->toBeInstanceOf(EpisodeSavedByCurrentUserResponse::class);
+    expect($actual)->toBeInstanceOf(SavedEpisodePage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(EpisodeSavedByCurrentUser::class);
+    expect($actual->items->first())->toBeInstanceOf(SavedEpisode::class);
 });

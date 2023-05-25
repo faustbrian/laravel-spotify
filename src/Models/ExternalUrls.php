@@ -8,7 +8,5 @@ use Spatie\LaravelData\Data;
 
 final class ExternalUrls extends Data
 {
-    public function __construct(
-        public readonly string $spotify,
-    ) {}
+    public string $spotify;
 }

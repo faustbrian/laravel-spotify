@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
+use BombenProdukt\Spotify\Models\AlbumPage;
 use BombenProdukt\Spotify\Models\Artist;
-use BombenProdukt\Spotify\Models\ArtistAlbumsResponse;
 use BombenProdukt\Spotify\Models\Track;
 use BombenProdukt\Spotify\Models\Tracks;
 use Spatie\LaravelData\DataCollection;
@@ -29,9 +29,9 @@ final readonly class Artists extends AbstractReference
         );
     }
 
-    public function albums(string $id, array $context = []): ArtistAlbumsResponse
+    public function albums(string $id, array $context = []): AlbumPage
     {
-        return ArtistAlbumsResponse::from($this->get("artists/{$id}/albums", $context)->json());
+        return AlbumPage::from($this->get("artists/{$id}/albums", $context)->json());
     }
 
     /**

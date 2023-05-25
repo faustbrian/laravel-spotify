@@ -4,32 +4,31 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use BombenProdukt\Spotify\Models\CurrentUser;
-use BombenProdukt\Spotify\Models\CurrentUserTopArtists;
-use BombenProdukt\Spotify\Models\CurrentUserTopTracks;
-use BombenProdukt\Spotify\Models\User;
-use BombenProdukt\Spotify\Models\UserFollowedArtists;
+use BombenProdukt\Spotify\Models\ArtistPage;
+use BombenProdukt\Spotify\Models\PrivateUser;
+use BombenProdukt\Spotify\Models\PublicUser;
+use BombenProdukt\Spotify\Models\TrackPage;
 
 final readonly class Users extends AbstractReference
 {
-    public function currentUserProfile(): CurrentUser
+    public function currentUserProfile(): PrivateUser
     {
-        return CurrentUser::from($this->get('me')->json());
+        return PrivateUser::from($this->get('me')->json());
     }
 
-    public function topArtists(array $context = []): CurrentUserTopArtists
+    public function topArtists(array $context = []): ArtistPage
     {
-        return CurrentUserTopArtists::from($this->get('me/top/artists', $context)->json());
+        return ArtistPage::from($this->get('me/top/artists', $context)->json());
     }
 
-    public function topTracks(array $context = []): CurrentUserTopTracks
+    public function topTracks(array $context = []): TrackPage
     {
-        return CurrentUserTopTracks::from($this->get('me/top/tracks', $context)->json());
+        return TrackPage::from($this->get('me/top/tracks', $context)->json());
     }
 
-    public function profile(string $id): User
+    public function profile(string $id): PublicUser
     {
-        return User::from($this->get("users/{$id}")->json());
+        return PublicUser::from($this->get("users/{$id}")->json());
     }
 
     public function followPlaylist(string $id, array $context = []): bool
@@ -42,9 +41,9 @@ final readonly class Users extends AbstractReference
         return $this->delete("playlists/{$id}/followers")->status() === 200;
     }
 
-    public function followedArtists(array $context = []): UserFollowedArtists
+    public function followedArtists(array $context = []): ArtistPage
     {
-        return UserFollowedArtists::from(
+        return ArtistPage::from(
             $this->get('me/following', [
                 ...$context,
                 'type' => 'artist',

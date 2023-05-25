@@ -8,8 +8,7 @@ use Spatie\LaravelData\Data;
 
 final class Cursors extends Data
 {
-    public function __construct(
-        public readonly string $after,
-        public readonly string $before,
-    ) {}
+    public string $after;
+
+    public string $before;
 }

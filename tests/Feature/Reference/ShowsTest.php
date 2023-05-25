@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Tests\Feature\Reference;
 
 use BombenProdukt\Spotify\Models\Episode;
+use BombenProdukt\Spotify\Models\EpisodePage;
+use BombenProdukt\Spotify\Models\SavedShow;
+use BombenProdukt\Spotify\Models\SavedShowPage;
 use BombenProdukt\Spotify\Models\Show;
-use BombenProdukt\Spotify\Models\ShowEpisodesResponse;
-use BombenProdukt\Spotify\Models\ShowSavedByCurrentUser;
-use BombenProdukt\Spotify\Models\ShowSavedByCurrentUserResponse;
 use BombenProdukt\Spotify\Reference\Shows;
 use Spatie\LaravelData\DataCollection;
 
@@ -28,7 +28,7 @@ test('findByIds', function (): void {
 test('episodes', function (): void {
     $actual = fakeSequence(Shows::class, 'shows/get-a-shows-episodes')->episodes();
 
-    expect($actual)->toBeInstanceOf(ShowEpisodesResponse::class);
+    expect($actual)->toBeInstanceOf(EpisodePage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
     expect($actual->items->first())->toBeInstanceOf(Episode::class);
 });
@@ -36,7 +36,7 @@ test('episodes', function (): void {
 test('savedByCurrentUser', function (): void {
     $actual = fakeSequence(Shows::class, 'shows/get-users-saved-shows')->savedByCurrentUser();
 
-    expect($actual)->toBeInstanceOf(ShowSavedByCurrentUserResponse::class);
+    expect($actual)->toBeInstanceOf(SavedShowPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(ShowSavedByCurrentUser::class);
+    expect($actual->items->first())->toBeInstanceOf(SavedShow::class);
 });

@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Tests\Feature\Reference;
 
 use BombenProdukt\Spotify\Models\Audiobook;
-use BombenProdukt\Spotify\Models\AudiobookChaptersResponse;
-use BombenProdukt\Spotify\Models\AudiobookSavedByUserResponse;
 use BombenProdukt\Spotify\Models\Chapter;
+use BombenProdukt\Spotify\Models\ChapterPage;
+use BombenProdukt\Spotify\Models\SavedAudiobook;
+use BombenProdukt\Spotify\Models\SavedAudiobookPage;
 use BombenProdukt\Spotify\Reference\Audiobooks;
 use Spatie\LaravelData\DataCollection;
 
@@ -27,7 +28,7 @@ test('findByIds', function (): void {
 test('chapters', function (): void {
     $actual = fakeSequence(Audiobooks::class, 'audiobooks/get-audiobook-chapters')->chapters('');
 
-    expect($actual)->toBeInstanceOf(AudiobookChaptersResponse::class);
+    expect($actual)->toBeInstanceOf(ChapterPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
     expect($actual->items->first())->toBeInstanceOf(Chapter::class);
 });
@@ -35,7 +36,7 @@ test('chapters', function (): void {
 test('savedByCurrentUser', function (): void {
     $actual = fakeSequence(Audiobooks::class, 'audiobooks/get-users-saved-audiobooks')->savedByCurrentUser();
 
-    expect($actual)->toBeInstanceOf(AudiobookSavedByUserResponse::class);
+    expect($actual)->toBeInstanceOf(SavedAudiobookPage::class);
     expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Audiobook::class);
+    expect($actual->items->first())->toBeInstanceOf(SavedAudiobook::class);
 });

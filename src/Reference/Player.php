@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Reference;
 
 use BombenProdukt\Spotify\Models\Device;
-use BombenProdukt\Spotify\Models\PlayerQueueResponse;
 use BombenProdukt\Spotify\Models\PlayerState;
-use BombenProdukt\Spotify\Models\RecentlyPlayedResponse;
+use BombenProdukt\Spotify\Models\Queue;
+use BombenProdukt\Spotify\Models\RecentlyPlayedTrackPage;
 use Spatie\LaravelData\DataCollection;
 
 final readonly class Player extends AbstractReference
@@ -105,14 +105,14 @@ final readonly class Player extends AbstractReference
             ->status() === 204;
     }
 
-    public function recentlyPlayed(array $context = []): RecentlyPlayedResponse
+    public function recentlyPlayed(array $context = []): RecentlyPlayedTrackPage
     {
-        return RecentlyPlayedResponse::from($this->get('me/player/recently-played', $context)->json());
+        return RecentlyPlayedTrackPage::from($this->get('me/player/recently-played', $context)->json());
     }
 
-    public function queue(): PlayerQueueResponse
+    public function queue(): Queue
     {
-        return PlayerQueueResponse::from($this->get('me/player/queue')->json());
+        return Queue::from($this->get('me/player/queue')->json());
     }
 
     public function queueTrack(string $deviceId, string $uri): bool

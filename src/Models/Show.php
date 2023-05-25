@@ -10,26 +10,41 @@ use Spatie\LaravelData\DataCollection;
 
 final class Show extends Data
 {
-    public function __construct(
-        public readonly array $available_markets,
-        #[DataCollectionOf(Copyright::class)]
-        public readonly DataCollection $copyrights,
-        public readonly string $description,
-        public readonly string $html_description,
-        public readonly bool $explicit,
-        public readonly ExternalUrls $external_urls,
-        public readonly string $href,
-        public readonly string $id,
-        #[DataCollectionOf(Image::class)]
-        public readonly DataCollection $images,
-        public readonly bool $is_externally_hosted,
-        public readonly array $languages,
-        public readonly string $media_type,
-        public readonly string $name,
-        public readonly string $publisher,
-        public readonly string $type,
-        public readonly string $uri,
-        public readonly int $total_episodes,
-        public readonly ?Episodes $episodes,
-    ) {}
+    public array $available_markets;
+
+    #[DataCollectionOf(Copyright::class)]
+    public DataCollection $copyrights;
+
+    public string $description;
+
+    public string $html_description;
+
+    public bool $explicit;
+
+    public ExternalUrls $external_urls;
+
+    public string $href;
+
+    public string $id;
+
+    #[DataCollectionOf(Image::class)]
+    public DataCollection $images;
+
+    public bool $is_externally_hosted;
+
+    public array $languages;
+
+    public string $media_type;
+
+    public string $name;
+
+    public string $publisher;
+
+    public string $type;
+
+    public string $uri;
+
+    public int $total_episodes;
+
+    public ?EpisodePage $episodes;
 }

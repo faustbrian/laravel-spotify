@@ -8,24 +8,39 @@ use Spatie\LaravelData\Data;
 
 final class AudioFeature extends Data
 {
-    public function __construct(
-        public readonly float $acousticness,
-        public readonly string $analysis_url,
-        public readonly float $danceability,
-        public readonly int $duration_ms,
-        public readonly float $energy,
-        public readonly string $id,
-        public readonly float $instrumentalness,
-        public readonly int $key,
-        public readonly float $liveness,
-        public readonly float $loudness,
-        public readonly int $mode,
-        public readonly float $speechiness,
-        public readonly float $tempo,
-        public readonly int $time_signature,
-        public readonly string $track_href,
-        public readonly string $type,
-        public readonly string $uri,
-        public readonly float $valence,
-    ) {}
+    public float $acousticness;
+
+    public string $analysis_url;
+
+    public float $danceability;
+
+    public int $duration_ms;
+
+    public float $energy;
+
+    public string $id;
+
+    public float $instrumentalness;
+
+    public int $key;
+
+    public float $liveness;
+
+    public float $loudness;
+
+    public int $mode;
+
+    public float $speechiness;
+
+    public float $tempo;
+
+    public int $time_signature;
+
+    public string $track_href;
+
+    public string $type;
+
+    public string $uri;
+
+    public float $valence;
 }

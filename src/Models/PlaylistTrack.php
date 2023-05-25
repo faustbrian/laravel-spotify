@@ -8,10 +8,11 @@ use Spatie\LaravelData\Data;
 
 final class PlaylistTrack extends Data
 {
-    public function __construct(
-        public readonly string $added_at,
-        public readonly User $added_by,
-        public readonly bool $is_local,
-        public readonly Track $track,
-    ) {}
+    public string $added_at;
+
+    public PublicUser $added_by;
+
+    public bool $is_local;
+
+    public Track $track;
 }

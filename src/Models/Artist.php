@@ -10,17 +10,24 @@ use Spatie\LaravelData\DataCollection;
 
 final class Artist extends Data
 {
-    public function __construct(
-        public readonly ExternalUrls $external_urls,
-        public readonly ?Follower $followers,
-        public readonly ?array $genres,
-        public readonly string $href,
-        public readonly string $id,
-        #[DataCollectionOf(Image::class)]
-        public readonly ?DataCollection $images,
-        public readonly string $name,
-        public readonly ?int $popularity,
-        public readonly string $type,
-        public readonly string $uri,
-    ) {}
+    public ExternalUrls $external_urls;
+
+    public ?Follower $followers;
+
+    public ?array $genres;
+
+    public string $href;
+
+    public string $id;
+
+    #[DataCollectionOf(Image::class)]
+    public ?DataCollection $images;
+
+    public string $name;
+
+    public ?int $popularity;
+
+    public string $type;
+
+    public string $uri;
 }

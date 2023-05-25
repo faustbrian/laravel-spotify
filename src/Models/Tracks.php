@@ -5,19 +5,10 @@ declare(strict_types=1);
 namespace BombenProdukt\Spotify\Models;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
-use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
-final class Tracks extends Data
+final class Tracks extends AbstractLengthAwarePage
 {
-    public function __construct(
-        public readonly string $href,
-        public readonly int $limit,
-        public readonly ?string $next,
-        public readonly int $offset,
-        public readonly ?string $previous,
-        public readonly int $total,
-        #[DataCollectionOf(Track::class)]
-        public readonly DataCollection $items,
-    ) {}
+    #[DataCollectionOf(Track::class)]
+    public DataCollection $items;
 }

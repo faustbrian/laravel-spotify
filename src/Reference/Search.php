@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use BombenProdukt\Spotify\Models\AlbumSearchResponse;
-use BombenProdukt\Spotify\Models\ArtistSearchResponse;
-use BombenProdukt\Spotify\Models\AudiobookSearchResponse;
-use BombenProdukt\Spotify\Models\EpisodeSearchResponse;
-use BombenProdukt\Spotify\Models\PlaylistSearchResponse;
-use BombenProdukt\Spotify\Models\SearchResponse;
-use BombenProdukt\Spotify\Models\ShowSearchResponse;
-use BombenProdukt\Spotify\Models\TrackSearchResponse;
+use BombenProdukt\Spotify\Models\AlbumPage;
+use BombenProdukt\Spotify\Models\ArtistPage;
+use BombenProdukt\Spotify\Models\AudiobookPage;
+use BombenProdukt\Spotify\Models\EpisodePage;
+use BombenProdukt\Spotify\Models\PlaylistPage;
+use BombenProdukt\Spotify\Models\SearchResult;
+use BombenProdukt\Spotify\Models\ShowPage;
+use BombenProdukt\Spotify\Models\TrackPage;
 
 final readonly class Search extends AbstractReference
 {
-    public function search(array $types, string $query, array $context = []): SearchResponse
+    public function search(array $types, string $query, array $context = []): SearchResult
     {
-        return SearchResponse::from(
+        return SearchResult::from(
             $this->get('search', [
                 ...$context,
                 'type' => $this->concat($types),
@@ -26,9 +26,9 @@ final readonly class Search extends AbstractReference
         );
     }
 
-    public function album(string $query, array $context = []): AlbumSearchResponse
+    public function album(string $query, array $context = []): AlbumPage
     {
-        return AlbumSearchResponse::from(
+        return AlbumPage::from(
             $this->get('search', [
                 ...$context,
                 'type' => 'album',
@@ -37,9 +37,9 @@ final readonly class Search extends AbstractReference
         );
     }
 
-    public function artist(string $query, array $context = []): ArtistSearchResponse
+    public function artist(string $query, array $context = []): ArtistPage
     {
-        return ArtistSearchResponse::from(
+        return ArtistPage::from(
             $this->get('search', [
                 ...$context,
                 'type' => 'artist',
@@ -48,9 +48,9 @@ final readonly class Search extends AbstractReference
         );
     }
 
-    public function audiobook(string $query, array $context = []): AudiobookSearchResponse
+    public function audiobook(string $query, array $context = []): AudiobookPage
     {
-        return AudiobookSearchResponse::from(
+        return AudiobookPage::from(
             $this->get('search', [
                 ...$context,
                 'type' => 'audiobook',
@@ -59,9 +59,9 @@ final readonly class Search extends AbstractReference
         );
     }
 
-    public function episode(string $query, array $context = []): EpisodeSearchResponse
+    public function episode(string $query, array $context = []): EpisodePage
     {
-        return EpisodeSearchResponse::from(
+        return EpisodePage::from(
             $this->get('search', [
                 ...$context,
                 'type' => 'episode',
@@ -70,9 +70,9 @@ final readonly class Search extends AbstractReference
         );
     }
 
-    public function playlist(string $query, array $context = []): PlaylistSearchResponse
+    public function playlist(string $query, array $context = []): PlaylistPage
     {
-        return PlaylistSearchResponse::from(
+        return PlaylistPage::from(
             $this->get('search', [
                 ...$context,
                 'type' => 'playlist',
@@ -81,9 +81,9 @@ final readonly class Search extends AbstractReference
         );
     }
 
-    public function show(string $query, array $context = []): ShowSearchResponse
+    public function show(string $query, array $context = []): ShowPage
     {
-        return ShowSearchResponse::from(
+        return ShowPage::from(
             $this->get('search', [
                 ...$context,
                 'type' => 'show',
@@ -92,9 +92,9 @@ final readonly class Search extends AbstractReference
         );
     }
 
-    public function track(string $query, array $context = []): TrackSearchResponse
+    public function track(string $query, array $context = []): TrackPage
     {
-        return TrackSearchResponse::from(
+        return TrackPage::from(
             $this->get('search', [
                 ...$context,
                 'type' => 'track',

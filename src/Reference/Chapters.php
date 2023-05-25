@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Spotify\Reference;
 
-use BombenProdukt\Spotify\Models;
 use BombenProdukt\Spotify\Models\Chapter;
 use Spatie\LaravelData\DataCollection;
 
@@ -20,7 +19,7 @@ final readonly class Chapters extends AbstractReference
      */
     public function findByIds(array $ids, array $context = []): DataCollection
     {
-        return Models\Chapter::collection(
+        return Chapter::collection(
             $this->get('chapters', [
                 ...$context,
                 'ids' => $this->concat($ids),

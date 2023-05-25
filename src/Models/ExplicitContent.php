@@ -8,8 +8,7 @@ use Spatie\LaravelData\Data;
 
 final class ExplicitContent extends Data
 {
-    public function __construct(
-        public readonly bool $filter_enabled,
-        public readonly bool $filter_locked,
-    ) {}
+    public bool $filter_enabled;
+
+    public bool $filter_locked;
 }

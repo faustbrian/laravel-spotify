@@ -8,13 +8,17 @@ use Spatie\LaravelData\Data;
 
 final class Device extends Data
 {
-    public function __construct(
-        public readonly ?string $id,
-        public readonly bool $is_active,
-        public readonly bool $is_private_session,
-        public readonly bool $is_restricted,
-        public readonly string $name,
-        public readonly string $type,
-        public readonly ?int $volume_percent,
-    ) {}
+    public ?string $id;
+
+    public bool $is_active;
+
+    public bool $is_private_session;
+
+    public bool $is_restricted;
+
+    public string $name;
+
+    public string $type;
+
+    public ?int $volume_percent;
 }

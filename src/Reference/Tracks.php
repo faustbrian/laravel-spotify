@@ -6,9 +6,9 @@ namespace BombenProdukt\Spotify\Reference;
 
 use BombenProdukt\Spotify\Models\AudioAnalysis;
 use BombenProdukt\Spotify\Models\AudioFeature;
+use BombenProdukt\Spotify\Models\Recommendations;
+use BombenProdukt\Spotify\Models\SavedTrackPage;
 use BombenProdukt\Spotify\Models\Track;
-use BombenProdukt\Spotify\Models\TrackRecommendationsResponse;
-use BombenProdukt\Spotify\Models\TrackSavedByCurrentUserResponse;
 use Spatie\LaravelData\DataCollection;
 
 final readonly class Tracks extends AbstractReference
@@ -31,9 +31,9 @@ final readonly class Tracks extends AbstractReference
         );
     }
 
-    public function savedByCurrentUser(array $context = []): TrackSavedByCurrentUserResponse
+    public function savedByCurrentUser(array $context = []): SavedTrackPage
     {
-        return TrackSavedByCurrentUserResponse::from($this->get('me/tracks', $context)->json());
+        return SavedTrackPage::from($this->get('me/tracks', $context)->json());
     }
 
     public function saveToCurrentUser(array $ids): bool
@@ -75,8 +75,8 @@ final readonly class Tracks extends AbstractReference
         return AudioAnalysis::from($this->get("audio-analysis/{$id}", $context)->json());
     }
 
-    public function recommendations(array $context = []): TrackRecommendationsResponse
+    public function recommendations(array $context = []): Recommendations
     {
-        return TrackRecommendationsResponse::from($this->get('recommendations', $context)->json());
+        return Recommendations::from($this->get('recommendations', $context)->json());
     }
 }

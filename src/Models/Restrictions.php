@@ -8,7 +8,5 @@ use Spatie\LaravelData\Data;
 
 final class Restrictions extends Data
 {
-    public function __construct(
-        public readonly string $reason,
-    ) {}
+    public string $reason;
 }

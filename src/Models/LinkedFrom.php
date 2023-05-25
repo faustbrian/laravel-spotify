@@ -8,11 +8,13 @@ use Spatie\LaravelData\Data;
 
 final class LinkedFrom extends Data
 {
-    public function __construct(
-        public readonly ?ExternalUrls $external_urls,
-        public readonly ?string $href,
-        public readonly ?string $id,
-        public readonly ?string $type,
-        public readonly ?string $uri,
-    ) {}
+    public ?ExternalUrls $external_urls;
+
+    public ?string $href;
+
+    public ?string $id;
+
+    public ?string $type;
+
+    public ?string $uri;
 }

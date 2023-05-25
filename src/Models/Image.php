@@ -8,9 +8,9 @@ use Spatie\LaravelData\Data;
 
 final class Image extends Data
 {
-    public function __construct(
-        public readonly string $url,
-        public readonly ?int $height,
-        public readonly ?int $width,
-    ) {}
+    public string $url;
+
+    public ?int $height;
+
+    public ?int $width;
 }

@@ -8,20 +8,31 @@ use Spatie\LaravelData\Data;
 
 final class Playlist extends Data
 {
-    public function __construct(
-        public readonly bool $collaborative,
-        public readonly ?string $description,
-        public readonly ExternalUrls $external_urls,
-        public readonly ?Follower $followers,
-        public readonly string $href,
-        public readonly string $id,
-        public readonly array $images,
-        public readonly string $name,
-        public readonly User $owner,
-        public readonly bool $public,
-        public readonly string $snapshot_id,
-        public readonly PlaylistTracks $tracks,
-        public readonly string $type,
-        public readonly string $uri,
-    ) {}
+    public bool $collaborative;
+
+    public ?string $description;
+
+    public ExternalUrls $external_urls;
+
+    public ?Follower $followers;
+
+    public string $href;
+
+    public string $id;
+
+    public array $images;
+
+    public string $name;
+
+    public PublicUser $owner;
+
+    public bool $public;
+
+    public string $snapshot_id;
+
+    public PlaylistTracks $tracks;
+
+    public string $type;
+
+    public string $uri;
 }

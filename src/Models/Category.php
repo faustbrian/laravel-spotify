@@ -10,11 +10,12 @@ use Spatie\LaravelData\DataCollection;
 
 final class Category extends Data
 {
-    public function __construct(
-        public readonly string $href,
-        #[DataCollectionOf(Icon::class)]
-        public readonly DataCollection $icons,
-        public readonly string $id,
-        public readonly string $name,
-    ) {}
+    public string $href;
+
+    #[DataCollectionOf(Image::class)]
+    public DataCollection $icons;
+
+    public string $id;
+
+    public string $name;
 }

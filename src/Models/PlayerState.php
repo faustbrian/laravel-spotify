@@ -8,16 +8,23 @@ use Spatie\LaravelData\Data;
 
 final class PlayerState extends Data
 {
-    public function __construct(
-        public readonly ?Device $device,
-        public readonly ?string $repeat_state,
-        public readonly ?bool $shuffle_state,
-        public readonly Context $context,
-        public readonly int $timestamp,
-        public readonly int $progress_ms,
-        public readonly bool $is_playing,
-        public readonly Track $item,
-        public readonly string $currently_playing_type,
-        public readonly Actions $actions,
-    ) {}
+    public Device $device;
+
+    public string $repeat_state;
+
+    public bool $shuffle_state;
+
+    public Context $context;
+
+    public int $timestamp;
+
+    public int $progress_ms;
+
+    public bool $is_playing;
+
+    public Track $item;
+
+    public string $currently_playing_type;
+
+    public Actions $actions;
 }
