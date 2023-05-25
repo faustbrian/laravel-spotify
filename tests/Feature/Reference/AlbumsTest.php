@@ -6,10 +6,11 @@ namespace Tests\Feature\Reference;
 
 use BombenProdukt\Spotify\Models\Album;
 use BombenProdukt\Spotify\Models\AlbumPage;
+use BombenProdukt\Spotify\Models\SavedAlbum;
 use BombenProdukt\Spotify\Models\SavedAlbumPage;
+use BombenProdukt\Spotify\Models\Track;
 use BombenProdukt\Spotify\Models\TrackPage;
 use BombenProdukt\Spotify\Reference\Albums;
-use Spatie\LaravelData\DataCollection;
 
 test('findById', function (): void {
     $actual = fakeOkFromFixture(Albums::class, 'albums/get-an-album')->findById('');
@@ -20,23 +21,23 @@ test('findById', function (): void {
 test('findByIds', function (): void {
     $actual = fakeOkFromFixture(Albums::class, 'albums/get-multiple-albums')->findByIds([]);
 
-    expect($actual)->toBeInstanceOf(DataCollection::class);
+    expect($actual)->toBeDataCollection(Album::class);
 });
 
 test('tracks', function (): void {
     $actual = fakeOkFromFixture(Albums::class, 'albums/get-an-albums-tracks')->tracks('');
 
-    expect($actual)->toBeInstanceOf(TrackPage::class);
+    expect($actual)->toBePage(TrackPage::class, Track::class);
 });
 
 test('savedByCurrentUser', function (): void {
     $actual = fakeOkFromFixture(Albums::class, 'albums/get-users-saved-albums')->savedByCurrentUser();
 
-    expect($actual)->toBeInstanceOf(SavedAlbumPage::class);
+    expect($actual)->toBePage(SavedAlbumPage::class, SavedAlbum::class);
 });
 
 test('newReleases', function (): void {
     $actual = fakeOkFromFixture(Albums::class, 'albums/get-new-releases')->newReleases();
 
-    expect($actual)->toBeInstanceOf(AlbumPage::class);
+    expect($actual)->toBePage(AlbumPage::class, Album::class);
 });

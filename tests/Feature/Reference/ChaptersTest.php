@@ -6,7 +6,6 @@ namespace Tests\Feature\Reference;
 
 use BombenProdukt\Spotify\Models\Chapter;
 use BombenProdukt\Spotify\Reference\Chapters;
-use Spatie\LaravelData\DataCollection;
 
 test('findById', function (): void {
     $actual = fakeOkFromFixture(Chapters::class, 'chapters/get-a-chapter')->findById('');
@@ -17,6 +16,5 @@ test('findById', function (): void {
 test('findByIds', function (): void {
     $actual = fakeOkFromFixture(Chapters::class, 'chapters/get-several-chapters')->findByIds([]);
 
-    expect($actual)->toBeInstanceOf(DataCollection::class);
-    expect($actual->first())->toBeInstanceOf(Chapter::class);
+    expect($actual)->toBeDataCollection(Chapter::class);
 });

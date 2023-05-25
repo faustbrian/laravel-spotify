@@ -8,9 +8,9 @@ use BombenProdukt\Spotify\Models\CurrentlyPlaying;
 use BombenProdukt\Spotify\Models\Device;
 use BombenProdukt\Spotify\Models\PlayerState;
 use BombenProdukt\Spotify\Models\Queue;
+use BombenProdukt\Spotify\Models\RecentlyPlayedTrack;
 use BombenProdukt\Spotify\Models\RecentlyPlayedTrackPage;
 use BombenProdukt\Spotify\Reference\Player;
-use Spatie\LaravelData\DataCollection;
 
 test('state', function (): void {
     $actual = fakeOkFromFixture(Player::class, 'player/get-information-about-the-users-current-playback')->state();
@@ -21,8 +21,7 @@ test('state', function (): void {
 test('devices', function (): void {
     $actual = fakeOkFromFixture(Player::class, 'player/get-a-users-available-devices')->devices();
 
-    expect($actual)->toBeInstanceOf(DataCollection::class);
-    expect($actual->first())->toBeInstanceOf(Device::class);
+    expect($actual)->toBeDataCollection(Device::class);
 });
 
 test('currentlyPlaying', function (): void {
@@ -34,7 +33,7 @@ test('currentlyPlaying', function (): void {
 test('recentlyPlayed', function (): void {
     $actual = fakeOkFromFixture(Player::class, 'player/get-recently-played')->recentlyPlayed();
 
-    expect($actual)->toBeInstanceOf(RecentlyPlayedTrackPage::class);
+    expect($actual)->toBePage(RecentlyPlayedTrackPage::class, RecentlyPlayedTrack::class);
 });
 
 test('queue', function (): void {

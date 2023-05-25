@@ -11,7 +11,6 @@ use BombenProdukt\Spotify\Models\SavedTrack;
 use BombenProdukt\Spotify\Models\SavedTrackPage;
 use BombenProdukt\Spotify\Models\Track;
 use BombenProdukt\Spotify\Reference\Tracks;
-use Spatie\LaravelData\DataCollection;
 
 test('findById', function (): void {
     $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-track')->findById('');
@@ -22,23 +21,19 @@ test('findById', function (): void {
 test('findByIds', function (): void {
     $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-several-tracks')->findByIds([]);
 
-    expect($actual)->toBeInstanceOf(DataCollection::class);
-    expect($actual->first())->toBeInstanceOf(Track::class);
+    expect($actual)->toBeDataCollection(Track::class);
 });
 
 test('savedByCurrentUser', function (): void {
     $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-users-saved-tracks')->savedByCurrentUser();
 
-    expect($actual)->toBeInstanceOf(SavedTrackPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(SavedTrack::class);
+    expect($actual)->toBePage(SavedTrackPage::class, SavedTrack::class);
 });
 
 test('audioFeatures', function (): void {
     $actual = fakeOkFromFixture(Tracks::class, 'tracks/get-several-audio-features')->audioFeatures();
 
-    expect($actual)->toBeInstanceOf(DataCollection::class);
-    expect($actual->first())->toBeInstanceOf(AudioFeature::class);
+    expect($actual)->toBeDataCollection(AudioFeature::class);
 });
 
 test('audioFeature', function (): void {

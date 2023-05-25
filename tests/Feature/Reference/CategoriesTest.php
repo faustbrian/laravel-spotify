@@ -7,14 +7,11 @@ namespace Tests\Feature\Reference;
 use BombenProdukt\Spotify\Models\Category;
 use BombenProdukt\Spotify\Models\CategoryPage;
 use BombenProdukt\Spotify\Reference\Categories;
-use Spatie\LaravelData\DataCollection;
 
 test('all', function (): void {
     $actual = fakeOkFromFixture(Categories::class, 'categories/get-categories')->all();
 
-    expect($actual)->toBeInstanceOf(CategoryPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Category::class);
+    expect($actual)->toBePage(CategoryPage::class, Category::class);
 });
 
 test('findById', function (): void {

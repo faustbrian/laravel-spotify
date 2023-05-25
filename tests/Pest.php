@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use BombenProdukt\Spotify\Reference\Client;
 use Illuminate\Support\Facades\Http;
+use Spatie\LaravelData\DataCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,17 @@ uses(
 
 expect()->extend('toBeOne', function () {
     return $this->toBe(1);
+});
+
+expect()->extend('toBePage', function (string $page, string $model): void {
+    expect($this->value)->toBeInstanceOf($page);
+    expect($this->value->items)->toBeInstanceOf(DataCollection::class);
+    expect($this->value->items->first())->toBeInstanceOf($model);
+});
+
+expect()->extend('toBeDataCollection', function (string $model): void {
+    expect($this->value)->toBeInstanceOf(DataCollection::class);
+    expect($this->value->first())->toBeInstanceOf($model);
 });
 
 /*

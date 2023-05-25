@@ -20,94 +20,58 @@ use BombenProdukt\Spotify\Models\ShowPage;
 use BombenProdukt\Spotify\Models\Track;
 use BombenProdukt\Spotify\Models\TrackPage;
 use BombenProdukt\Spotify\Reference\Search;
-use Spatie\LaravelData\DataCollection;
 
 test('search', function (): void {
     $actual = fakeOkFromFixture(Search::class, 'search/search')->search([''], '');
 
     expect($actual)->toBeInstanceOf(SearchResult::class);
-
-    expect($actual->albums)->toBeInstanceOf(AlbumPage::class);
-    expect($actual->albums->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->albums->items->first())->toBeInstanceOf(Album::class);
-
-    expect($actual->artists)->toBeInstanceOf(ArtistPage::class);
-    expect($actual->artists->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->artists->items->first())->toBeInstanceOf(Artist::class);
-
-    expect($actual->audiobooks)->toBeInstanceOf(AudiobookPage::class);
-    expect($actual->audiobooks->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->audiobooks->items->first())->toBeInstanceOf(Audiobook::class);
-
-    expect($actual->episodes)->toBeInstanceOf(EpisodePage::class);
-    expect($actual->episodes->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->episodes->items->first())->toBeInstanceOf(Episode::class);
-
-    expect($actual->playlists)->toBeInstanceOf(PlaylistPage::class);
-    expect($actual->playlists->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->playlists->items->first())->toBeInstanceOf(Playlist::class);
-
-    expect($actual->shows)->toBeInstanceOf(ShowPage::class);
-    expect($actual->shows->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->shows->items->first())->toBeInstanceOf(Show::class);
-
-    expect($actual->tracks)->toBeInstanceOf(TrackPage::class);
-    expect($actual->tracks->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->tracks->items->first())->toBeInstanceOf(Track::class);
+    expect($actual->albums)->toBePage(AlbumPage::class, Album::class);
+    expect($actual->artists)->toBePage(ArtistPage::class, Artist::class);
+    expect($actual->audiobooks)->toBePage(AudiobookPage::class, Audiobook::class);
+    expect($actual->episodes)->toBePage(EpisodePage::class, Episode::class);
+    expect($actual->playlists)->toBePage(PlaylistPage::class, Playlist::class);
+    expect($actual->shows)->toBePage(ShowPage::class, Show::class);
+    expect($actual->tracks)->toBePage(TrackPage::class, Track::class);
 });
 
 test('album', function (): void {
     $actual = fakeOkFromFixture(Search::class, 'search/album')->album('');
 
-    expect($actual)->toBeInstanceOf(AlbumPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Album::class);
+    expect($actual)->toBePage(AlbumPage::class, Album::class);
 });
 
 test('artist', function (): void {
     $actual = fakeOkFromFixture(Search::class, 'search/artist')->artist('');
 
-    expect($actual)->toBeInstanceOf(ArtistPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Artist::class);
+    expect($actual)->toBePage(ArtistPage::class, Artist::class);
 });
 
 test('audiobook', function (): void {
     $actual = fakeOkFromFixture(Search::class, 'search/audiobook')->audiobook('');
 
-    expect($actual)->toBeInstanceOf(AudiobookPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Audiobook::class);
+    expect($actual)->toBePage(AudiobookPage::class, Audiobook::class);
 });
 
 test('episode', function (): void {
     $actual = fakeOkFromFixture(Search::class, 'search/episode')->episode('');
 
-    expect($actual)->toBeInstanceOf(EpisodePage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Episode::class);
+    expect($actual)->toBePage(EpisodePage::class, Episode::class);
 });
 
 test('playlist', function (): void {
     $actual = fakeOkFromFixture(Search::class, 'search/playlist')->playlist('');
 
-    expect($actual)->toBeInstanceOf(PlaylistPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Playlist::class);
+    expect($actual)->toBePage(PlaylistPage::class, Playlist::class);
 });
 
 test('show', function (): void {
     $actual = fakeOkFromFixture(Search::class, 'search/show')->show('');
 
-    expect($actual)->toBeInstanceOf(ShowPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Show::class);
+    expect($actual)->toBePage(ShowPage::class, Show::class);
 });
 
 test('track', function (): void {
     $actual = fakeOkFromFixture(Search::class, 'search/track')->track('');
 
-    expect($actual)->toBeInstanceOf(TrackPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Track::class);
+    expect($actual)->toBePage(TrackPage::class, Track::class);
 });

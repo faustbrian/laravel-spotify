@@ -8,9 +8,9 @@ use BombenProdukt\Spotify\Models\Artist;
 use BombenProdukt\Spotify\Models\ArtistPage;
 use BombenProdukt\Spotify\Models\PrivateUser;
 use BombenProdukt\Spotify\Models\PublicUser;
+use BombenProdukt\Spotify\Models\Track;
 use BombenProdukt\Spotify\Models\TrackPage;
 use BombenProdukt\Spotify\Reference\Users;
-use Spatie\LaravelData\DataCollection;
 
 test('currentUserProfile', function (): void {
     $actual = fakeOkFromFixture(Users::class, 'users/get-current-users-profile')->currentUserProfile();
@@ -21,13 +21,13 @@ test('currentUserProfile', function (): void {
 test('topArtists', function (): void {
     $actual = fakeOkFromFixture(Users::class, 'users/get-users-top-artists')->topArtists();
 
-    expect($actual)->toBeInstanceOf(ArtistPage::class);
+    expect($actual)->toBePage(ArtistPage::class, Artist::class);
 });
 
 test('topTracks', function (): void {
     $actual = fakeOkFromFixture(Users::class, 'users/get-users-top-tracks')->topTracks();
 
-    expect($actual)->toBeInstanceOf(TrackPage::class);
+    expect($actual)->toBePage(TrackPage::class, Track::class);
 });
 
 test('profile', function (): void {
@@ -39,15 +39,11 @@ test('profile', function (): void {
 test('followedArtists', function (): void {
     $actual = fakeOkFromFixture(Users::class, 'users/get-followed')->followedArtists();
 
-    expect($actual)->toBeInstanceOf(ArtistPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Artist::class);
+    expect($actual)->toBePage(ArtistPage::class, Artist::class);
 });
 
 test('checkFollowsPlaylist', function (): void {
     $actual = fakeOkFromFixture(Users::class, 'users/get-followed')->followedArtists();
 
-    expect($actual)->toBeInstanceOf(ArtistPage::class);
-    expect($actual->items)->toBeInstanceOf(DataCollection::class);
-    expect($actual->items->first())->toBeInstanceOf(Artist::class);
+    expect($actual)->toBePage(ArtistPage::class, Artist::class);
 });
