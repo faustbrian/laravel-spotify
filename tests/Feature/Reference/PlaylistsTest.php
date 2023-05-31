@@ -35,6 +35,12 @@ test('allForUser', function (): void {
     expect($actual)->toBePage(PlaylistPage::class, Playlist::class);
 });
 
+test('create', function (): void {
+    $actual = fakeOkFromFixture(Playlists::class, 'playlists/create-playlist')->create('');
+
+    expect($actual)->toBeInstanceOf(Playlist::class);
+});
+
 test('featured', function (): void {
     $actual = fakeOkFromFixture(Playlists::class, 'playlists/get-featured-playlists')->featured();
 

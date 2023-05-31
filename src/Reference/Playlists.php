@@ -62,11 +62,9 @@ final readonly class Playlists extends AbstractReference
         return PlaylistPage::from($this->get("users/{$userId}/playlists", $context)->json());
     }
 
-    public function create(string $userId, array $context = []): bool
+    public function create(string $userId, array $context = []): Playlist
     {
-        return $this
-            ->post("users/{$userId}/playlists", $context)
-            ->status() === 201;
+        return Playlist::from($this->post("users/{$userId}/playlists", $context)->json());
     }
 
     public function featured(array $context = []): PlaylistPage
