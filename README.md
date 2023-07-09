@@ -4,20 +4,6 @@
     </a>
 </p>
 
-<p align="center">
-    <a href="https://github.com/faustbrian/laravel-spotify/actions">
-        <img src="https://badge.sh/github/check-runs/bombenprodukt/laravel-spotify" alt="Checks" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-spotify">
-        <img src="https://badge.sh/packagist/downloads/bombenprodukt/laravel-spotify" alt="Downloads" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-spotify">
-        <img src="https://badge.sh/packagist/version/bombenprodukt/laravel-spotify" alt="Version" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-spotify">
-        <img src="https://badge.sh/packagist/license/bombenprodukt/laravel-spotify" alt="License" />
-    </a>
-</p>
 
 ## About spotify
 
