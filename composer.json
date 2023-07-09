@@ -14,7 +14,7 @@
 			"role": "Developer"
 		}
 	],
-	"homepage": "https://github.com/bombenprodukt/laravel-spotify",
+	"homepage": "https://github.com/faustbrian/laravel-spotify",
 	"require": {
 		"php": "^8.2",
 		"bombenprodukt/laravel-manager": "^1.0",
