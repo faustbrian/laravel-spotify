@@ -1,0 +1,67 @@
+{
+	"name": "basecodeoy/laravel-spotify",
+	"description": "A package to easily make use of the Spotify Web API with Laravel.",
+	"license": "MIT",
+	"keywords": [
+		"BaseCode Oy",
+		"laravel",
+		"spotify"
+	],
+	"authors": [
+		{
+			"name": "Brian Faust",
+			"email": "hello@basecode.sh",
+			"role": "Developer"
+		}
+	],
+	"homepage": "https://github.com/basecodeoy/laravel-spotify",
+	"require": {
+		"php": "^8.3",
+		"basecodeoy/laravel-manager": "^1.0.0",
+		"guzzlehttp/guzzle": "^7.9.2",
+		"illuminate/contracts": "^11.0",
+		"laravel/socialite": "^5.16",
+		"spatie/laravel-data": "^4.11.1"
+	},
+	"require-dev": {
+		"basecodeoy/standards": "^1.0.5"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"BaseCodeOy\\Spotify\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"ergebnis/composer-normalize": true,
+			"infection/extension-installer": true,
+			"pestphp/pest-plugin": true,
+			"phpstan/extension-installer": true
+		},
+		"sort-packages": true
+	},
+	"extra": {
+		"laravel": {
+			"aliases": {
+				"Spotify": "BaseCodeOy\\Spotify\\Facades\\Spotify"
+			},
+			"providers": [
+				"BaseCodeOy\\Spotify\\ServiceProvider"
+			]
+		}
+	},
+	"scripts": {
+		"post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+		"analyse": "vendor/bin/phpstan analyse",
+		"format": "vendor/bin/php-cs-fixer fix",
+		"test": "vendor/bin/pest",
+		"test-coverage": "vendor/bin/pest --coverage"
+	}
+}
